@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "about": "About",
+    "activities": "Activities",
+    "schedule": "Schedule",
+    "categories": "Categories",
+    "organizers": "Organizers",
+    "merch": "Merch",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "register": "Register Now",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "hero": {
+    "edition": "7th Edition",
+    "wordmark": "Drone Edu Challenge IR 4.0 2026",
+    "tagline0": "STEM Education",
+    "tagline1": "National Online Tournament",
+    "tagline2": "Prestigious National Certificate",
+    "cta": "Register Now",
+    "eventPeriod": "May – August 2026",
+    "organizersLabel": "Organized by"
+  },
+  "about": {
+    "title": "About DEC4IR",
+    "mission": "Drone Edu Challenge Industrial Revolution 4.0 (DEC4IR) is Malaysia's premier online drone education competition, empowering secondary and primary school students with knowledge and hands-on experience in drone technology and programming.",
+    "impact": "Since its inception, DEC4IR has impacted over 100,000 students, fostering interest in STEM (Science, Technology, Engineering, and Mathematics) and Industry 4.0 technologies.",
+    "stat1Value": "100,000+",
+    "stat1Label": "Students Benefitted",
+    "stat2Value": "1,000+",
+    "stat2Label": "Schools Participated",
+    "stat3Value": "6",
+    "stat3Label": "Years of Excellence"
+  },
+  "activities": {
+    "title": "Tournament Activities",
+    "subtitle": "Everything you need to learn, compete, and grow"
+  },
+  "features": {
+    "mobileApp": {
+      "title": "Drone Control Mobile App",
+      "description": "Participants learn the basic drone input via mobile."
+    },
+    "vrTraining": {
+      "title": "VR Training",
+      "description": "Immersive virtual reality drone training environment."
+    },
+    "codeBlock": {
+      "title": "Code Block Flight Simulation",
+      "description": "Visual programming to control drone flight paths."
+    },
+    "workbook": {
+      "title": "Drone Block Coding 101 Workbook",
+      "description": "STEM-based drone programming through visual block coding — sequencing, loops, and conditional logic applied to real-world flight missions."
+    },
+    "videoLearning": {
+      "title": "Video Learning",
+      "description": "Structured video curriculum for competition preparation."
+    },
+    "quizPlatform": {
+      "title": "Quiz Platform",
+      "description": "Online quiz system for trial and screening — test your drone knowledge."
+    },
+    "assignment": {
+      "title": "Final Assignment",
+      "description": "Shortlisted students complete a final assignment covering soft skills, hard skills, and hands-on drone structure practice."
+    },
+    "certificate": {
+      "title": "MOE Certified Certificate",
+      "description": "Ministry of Education Malaysia recognised certificate for all participants."
+    }
+  },
+  "schedule": {
+    "title": "Event Schedule",
+    "subtitle": "Mark your calendar — every key date for DEC4IR 2026",
+    "phases": {
+      "regOpen": "Registration Opens & Learning Materials Available",
+      "regClose": "Registration Closes",
+      "trialQuiz": "Trial Quiz",
+      "screeningQuiz": "Screening Quiz",
+      "shortlist": "Shortlist Announcement & Final Assignment Released",
+      "finalDeadline": "Final Assignment Submission Deadline",
+      "results": "Results Announcement"
+    },
+    "phaseDesc": {
+      "regOpen": "Register now and access all learning materials on the portal.",
+      "regClose": "Last day to register for DEC4IR 2026.",
+      "trialQuiz": "Dummy questions, no scoring. Familiarise yourself with the quiz platform before the real deal.",
+      "screeningQuiz": "Timed, scored quiz. Best individual per state per category advances to the final.",
+      "shortlist": "Shortlisted participants announced. Final assignment released.",
+      "finalDeadline": "Submit your final assignment before this deadline.",
+      "results": "Winners announced per category. Certificate issuance begins."
+    }
+  },
+  "categories": {
+    "title": "Categories & Certificates",
+    "subtitle": "Find your level. Earn a nationally recognised certificate.",
+    "categoriesTitle": "Competition Categories",
+    "certificatesTitle": "Certificate Tiers",
+    "moeNote": "All certificates are certified by the Ministry of Education Malaysia",
+    "cats": {
+      "primaryL1": { "name": "National Primary Level 1", "grades": "Standard 1 – 3" },
+      "primaryL2": { "name": "National Primary Level 2", "grades": "Standard 4 – 6" },
+      "secondaryLower": { "name": "National Secondary Lower", "grades": "Form 1 – 3" },
+      "secondaryUpper": { "name": "National Secondary Upper", "grades": "Form 4 – 5" }
+    },
+    "certs": {
+      "participation": {
+        "name": "Certificate of Participation",
+        "desc": "Awarded to all participants who complete the Screening Quiz."
+      },
+      "achievement": {
+        "name": "Certificate of Achievement",
+        "desc": "Awarded to shortlisted participants who advance to the Final Assignment."
+      },
+      "excellence": {
+        "name": "Certificate of Excellence",
+        "desc": "Awarded to winners per category."
+      }
+    }
+  },
+  "organizers": {
+    "title": "Organizers",
+    "mainTitle": "Main Organizers"
+  },
+  "merch": {
+    "title": "Official Merchandise",
+    "subtitle": "Gear up with exclusive DEC4IR 2026 merchandise",
+    "shopNow": "Shop Now",
+    "viewStore": "Visit Official Store",
+    "comingSoon": "More items coming soon"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? We have answers."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with the DEC4IR team",
+    "email": "Email",
+    "telegram": "Telegram",
+    "facebook": "Facebook"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "organizedBy": "Organized by"
+  }
+}

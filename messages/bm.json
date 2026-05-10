@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "about": "Tentang",
+    "activities": "Aktiviti",
+    "schedule": "Jadual",
+    "categories": "Kategori",
+    "organizers": "Penganjur",
+    "merch": "Cenderamata",
+    "faq": "Soal Jawab",
+    "contact": "Hubungi",
+    "register": "Daftar Sekarang",
+    "menuOpen": "Buka menu",
+    "menuClose": "Tutup menu"
+  },
+  "hero": {
+    "edition": "Edisi ke-7",
+    "wordmark": "Drone Edu Challenge IR 4.0 2026",
+    "tagline0": "Pendidikan STEM",
+    "tagline1": "Pertandingan Dalam Talian Kebangsaan",
+    "tagline2": "Sijil Kebangsaan Berprestij",
+    "cta": "Daftar Sekarang",
+    "eventPeriod": "Mei – Ogos 2026",
+    "organizersLabel": "Dianjurkan oleh"
+  },
+  "about": {
+    "title": "Tentang DEC4IR",
+    "mission": "Drone Edu Challenge Industrial Revolution 4.0 (DEC4IR) merupakan pertandingan pendidikan dron dalam talian utama Malaysia, memperkasakan pelajar sekolah menengah dan rendah dengan pengetahuan dan pengalaman praktikal dalam teknologi dron dan pengaturcaraan.",
+    "impact": "Sejak penubuhannya, DEC4IR telah memberi impak kepada lebih 100,000 pelajar, memupuk minat dalam STEM (Sains, Teknologi, Kejuruteraan, dan Matematik) serta teknologi Revolusi Industri 4.0.",
+    "stat1Value": "100,000+",
+    "stat1Label": "Pelajar Mendapat Manfaat",
+    "stat2Value": "1,000+",
+    "stat2Label": "Sekolah Terlibat",
+    "stat3Value": "6",
+    "stat3Label": "Tahun Kecemerlangan"
+  },
+  "activities": {
+    "title": "Aktiviti Pertandingan",
+    "subtitle": "Semua yang anda perlukan untuk belajar, bertanding, dan berkembang"
+  },
+  "features": {
+    "mobileApp": {
+      "title": "Aplikasi Kawalan Dron Mudah Alih",
+      "description": "Peserta mempelajari kawalan asas dron melalui telefon pintar."
+    },
+    "vrTraining": {
+      "title": "Latihan VR",
+      "description": "Persekitaran latihan dron realiti maya yang imersif."
+    },
+    "codeBlock": {
+      "title": "Simulasi Penerbangan Blok Kod",
+      "description": "Pengaturcaraan visual untuk mengawal laluan penerbangan dron."
+    },
+    "workbook": {
+      "title": "Buku Kerja Pengkodan Blok Dron 101",
+      "description": "Pengaturcaraan dron berasaskan STEM melalui pengkodan blok visual — urutan, gelung, dan logik bersyarat dalam misi penerbangan sebenar."
+    },
+    "videoLearning": {
+      "title": "Pembelajaran Video",
+      "description": "Kurikulum video berstruktur untuk persediaan pertandingan."
+    },
+    "quizPlatform": {
+      "title": "Platform Kuiz",
+      "description": "Sistem kuiz dalam talian untuk ujian percubaan dan saringan — uji pengetahuan dron anda."
+    },
+    "assignment": {
+      "title": "Tugasan Akhir",
+      "description": "Peserta yang disenarai pendek menyelesaikan tugasan akhir merangkumi kemahiran insaniah, teknikal, dan amali struktur dron."
+    },
+    "certificate": {
+      "title": "Sijil Bertauliah KPM",
+      "description": "Sijil yang diiktiraf oleh Kementerian Pendidikan Malaysia untuk semua peserta."
+    }
+  },
+  "schedule": {
+    "title": "Jadual Acara",
+    "subtitle": "Tandakan kalendar anda — setiap tarikh penting DEC4IR 2026",
+    "phases": {
+      "regOpen": "Pendaftaran Dibuka & Bahan Pembelajaran Tersedia",
+      "regClose": "Pendaftaran Ditutup",
+      "trialQuiz": "Kuiz Percubaan",
+      "screeningQuiz": "Kuiz Saringan",
+      "shortlist": "Pengumuman Senarai Pendek & Tugasan Akhir Dikeluarkan",
+      "finalDeadline": "Tarikh Akhir Hantar Tugasan Akhir",
+      "results": "Pengumuman Keputusan"
+    },
+    "phaseDesc": {
+      "regOpen": "Daftar sekarang dan akses semua bahan pembelajaran di portal.",
+      "regClose": "Hari terakhir untuk mendaftar DEC4IR 2026.",
+      "trialQuiz": "Soalan dummy, tiada markah. Biasakan diri dengan platform kuiz sebelum yang sebenar.",
+      "screeningQuiz": "Kuiz berjangka masa dan berskor. Individu terbaik per negeri per kategori maju ke peringkat akhir.",
+      "shortlist": "Peserta yang disenarai pendek diumumkan. Tugasan akhir dikeluarkan.",
+      "finalDeadline": "Hantar tugasan akhir anda sebelum tarikh ini.",
+      "results": "Pemenang diumumkan mengikut kategori. Pengeluaran sijil bermula."
+    }
+  },
+  "categories": {
+    "title": "Kategori & Sijil",
+    "subtitle": "Cari tahap anda. Dapatkan sijil yang diiktiraf kebangsaan.",
+    "categoriesTitle": "Kategori Pertandingan",
+    "certificatesTitle": "Tahap Sijil",
+    "moeNote": "Semua sijil diperakui oleh Kementerian Pendidikan Malaysia",
+    "cats": {
+      "primaryL1": { "name": "Kebangsaan Rendah Tahap 1", "grades": "Darjah 1 – 3" },
+      "primaryL2": { "name": "Kebangsaan Rendah Tahap 2", "grades": "Darjah 4 – 6" },
+      "secondaryLower": { "name": "Kebangsaan Menengah Rendah", "grades": "Tingkatan 1 – 3" },
+      "secondaryUpper": { "name": "Kebangsaan Menengah Atas", "grades": "Tingkatan 4 – 5" }
+    },
+    "certs": {
+      "participation": {
+        "name": "Sijil Penyertaan",
+        "desc": "Diberikan kepada semua peserta yang menyelesaikan Kuiz Saringan."
+      },
+      "achievement": {
+        "name": "Sijil Pencapaian",
+        "desc": "Diberikan kepada peserta yang disenarai pendek dan maju ke Tugasan Akhir."
+      },
+      "excellence": {
+        "name": "Sijil Kecemerlangan",
+        "desc": "Diberikan kepada pemenang mengikut kategori."
+      }
+    }
+  },
+  "organizers": {
+    "title": "Penganjur",
+    "mainTitle": "Penganjur Utama"
+  },
+  "merch": {
+    "title": "Cenderamata Rasmi",
+    "subtitle": "Dapatkan cenderamata eksklusif DEC4IR 2026",
+    "shopNow": "Beli Sekarang",
+    "viewStore": "Lawati Kedai Rasmi",
+    "comingSoon": "Lebih banyak item akan datang"
+  },
+  "faq": {
+    "title": "Soalan Lazim",
+    "subtitle": "Ada soalan? Kami ada jawapannya."
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Hubungi pasukan DEC4IR",
+    "email": "E-mel",
+    "telegram": "Telegram",
+    "facebook": "Facebook"
+  },
+  "footer": {
+    "rights": "Hak cipta terpelihara.",
+    "organizedBy": "Dianjurkan oleh"
+  }
+}
