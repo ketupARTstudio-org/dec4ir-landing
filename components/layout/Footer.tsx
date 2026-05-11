@@ -63,14 +63,6 @@ export default function Footer() {
               <span>✉️</span> {CONTACT.email}
             </a>
             <a
-              href={CONTACT.telegram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-subtle hover:text-accent text-sm transition-colors flex items-center gap-2"
-            >
-              <span>💬</span> Telegram
-            </a>
-            <a
               href={CONTACT.facebook}
               target="_blank"
               rel="noopener noreferrer"

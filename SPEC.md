@@ -205,7 +205,7 @@ BM translations of all FAQ content required.
 ### 6.1 Theme
 Futuristic / tech-forward. References: aerospace HUDs, drone tech interfaces, educational innovation.
 
-### 6.2 Color Palette (to be confirmed against brand guidelines)
+### 6.2 Color Palette
 - **Background:** Deep dark (near-black, e.g. `#1e1e1e`)
 - **Primary accent:** Electric cyan / neon maroon (e.g. `#800f3d`)
 - **Secondary accent:** Gold/yellow (e.g. `#e69125`, `ffc107`)
@@ -381,7 +381,6 @@ The following must be provided before the site can go fully live:
 
 | Item | Section | Status |
 |---|---|---|
-| Organizer entity name | Footer, About | TBD |
 | Hero carousel media (GIF/video) | Hero | Ready (in /public) |
 
 ---

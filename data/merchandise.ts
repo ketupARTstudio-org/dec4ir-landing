@@ -3,34 +3,18 @@ export interface MerchItem {
   name: string
   gradient: string
   image: string | null
+  url: string | null
 }
 
 export const MERCH_ITEMS: MerchItem[] = [
   {
-    id: 'tshirt',
-    name: 'DEC4IR 2026 T-Shirt',
-    gradient: 'from-cyan-900/70 to-blue-900/70',
-    image: null,
-  },
-  {
-    id: 'cap',
-    name: 'DEC4IR Official Cap',
-    gradient: 'from-blue-900/70 to-indigo-900/70',
-    image: null,
-  },
-  {
-    id: 'bag',
-    name: 'Drone Kit Bag',
+    id: 'keychain',
+    name: 'DEC4IR 2026 Keychain',
     gradient: 'from-violet-900/70 to-purple-900/70',
     image: null,
-  },
-  {
-    id: 'notebook',
-    name: 'Competition Notebook',
-    gradient: 'from-indigo-900/70 to-cyan-900/70',
-    image: null,
+    url: 'https://shopee.com.my/DEC4IR-Stainless-Key-Ring-Keychain-i.1630383609.49051278865?extraParams=%7B%22display_model_id%22%3A360114462537%2C%22model_selection_logic%22%3A3%7D'
   },
 ]
 
-// Replace with actual Shopify store URL when available
-export const SHOPIFY_URL = 'https://dec4ir.myshopify.com'
+// Replace with actual Shoppee store URL when available
+export const SHOPEE_URL = 'https://shopee.com.my/ketupartstudio'

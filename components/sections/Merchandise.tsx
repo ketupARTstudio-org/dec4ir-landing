@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { MERCH_ITEMS, SHOPIFY_URL } from '@/data/merchandise'
+import { MERCH_ITEMS, SHOPEE_URL } from '@/data/merchandise'
 import Image from 'next/image'
 
 export default function Merchandise() {
@@ -16,7 +16,7 @@ export default function Merchandise() {
             <p className="text-secondary">{t('subtitle')}</p>
           </div>
           <a
-            href={SHOPIFY_URL}
+            href={SHOPEE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 border border-accent text-accent font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-accent hover:text-base transition-all duration-200"
@@ -46,7 +46,7 @@ export default function Merchandise() {
               <div className="p-3">
                 <p className="text-primary text-sm font-medium mb-2 leading-tight">{item.name}</p>
                 <a
-                  href={SHOPIFY_URL}
+                  href={item.url ? item.url : SHOPEE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent text-xs font-semibold hover:underline"

@@ -13,14 +13,6 @@ const CHANNELS = [
     external: false,
   },
   {
-    key: 'telegram' as const,
-    icon: '💬',
-    label: 'Telegram',
-    href: CONTACT.telegram,
-    display: '@dec4ir',
-    external: true,
-  },
-  {
     key: 'facebook' as const,
     icon: '👥',
     label: 'Facebook',
@@ -39,7 +31,7 @@ export default function Contact() {
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t('title')}</h2>
         <p className="text-secondary mb-12">{t('subtitle')}</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           {CHANNELS.map(ch => (
             <a
               key={ch.key}
@@ -59,6 +51,19 @@ export default function Contact() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Address */}
+        <div className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3">
+          <span className="text-3xl">📍</span>
+          <div>
+            <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">
+              {t('address')}
+            </p>
+            <p className="text-primary text-sm font-medium leading-relaxed">
+              {CONTACT.address}
+            </p>
+          </div>
         </div>
       </div>
     </section>

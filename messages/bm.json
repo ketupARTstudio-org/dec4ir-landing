@@ -122,7 +122,8 @@
   },
   "organizers": {
     "title": "Penganjur",
-    "mainTitle": "Penganjur Utama"
+    "mainTitle": "Penganjur Utama",
+    "strategicPartnersTitle": "Rakan Strategik"
   },
   "merch": {
     "title": "Cenderamata Rasmi",
@@ -139,8 +140,8 @@
     "title": "Hubungi Kami",
     "subtitle": "Hubungi pasukan DEC4IR",
     "email": "E-mel",
-    "telegram": "Telegram",
-    "facebook": "Facebook"
+    "facebook": "Facebook",
+    "address": "Alamat"
   },
   "footer": {
     "rights": "Hak cipta terpelihara.",

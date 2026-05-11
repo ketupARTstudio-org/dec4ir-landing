@@ -122,7 +122,8 @@
   },
   "organizers": {
     "title": "Organizers",
-    "mainTitle": "Main Organizers"
+    "mainTitle": "Main Organizers",
+    "strategicPartnersTitle": "Strategic Partners"
   },
   "merch": {
     "title": "Official Merchandise",
@@ -139,8 +140,8 @@
     "title": "Contact Us",
     "subtitle": "Get in touch with the DEC4IR team",
     "email": "Email",
-    "telegram": "Telegram",
-    "facebook": "Facebook"
+    "facebook": "Facebook",
+    "address": "Address"
   },
   "footer": {
     "rights": "All rights reserved.",
