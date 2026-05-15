@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { MERCH_ITEMS, SHOPEE_URL } from '@/data/merchandise'
 import Image from 'next/image'
+import { withBasePath } from '@/lib/site'
 
 export default function Merchandise() {
   const t = useTranslations('merch')
@@ -34,7 +35,7 @@ export default function Merchandise() {
               {/* Image / placeholder */}
               <div className={`relative aspect-square bg-gradient-to-br ${item.gradient}`}>
                 {item.image ? (
-                  <Image src={item.image} alt={item.name} fill className="object-cover" />
+                  <Image src={withBasePath(item.image)} alt={item.name} fill className="object-cover" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-4xl opacity-30">🚁</span>

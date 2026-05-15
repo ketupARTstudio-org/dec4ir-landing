@@ -6,6 +6,7 @@ import { ORGANIZERS } from '@/data/organizers'
 import { REGISTRATION_URL } from '@/data/contact'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import Image from 'next/image'
+import { withBasePath } from '@/lib/site'
 
 export default function Hero() {
   const t = useTranslations('hero')
@@ -67,7 +68,7 @@ export default function Hero() {
                   {org.logo ? (
                     <div className="relative h-12 w-28 opacity-80 group-hover:opacity-100 transition-opacity">
                       <Image
-                        src={org.logo}
+                        src={withBasePath(org.logo)}
                         alt={locale === 'bm' ? org.nameBM : org.name}
                         fill
                         className="object-contain"

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { ORGANIZERS } from '@/data/organizers'
 import Image from 'next/image'
+import { withBasePath } from '@/lib/site'
 
 export default function Organizers() {
   const t = useTranslations('organizers')
@@ -31,7 +32,7 @@ export default function Organizers() {
               <div className="relative w-52 h-32 bg-surface border border-boundary rounded-xl flex items-center justify-center overflow-hidden group-hover:border-accent/50 transition-all duration-200">
                 {org.logo ? (
                   <Image
-                    src={org.logo}
+                    src={withBasePath(org.logo)}
                     alt={locale === 'bm' ? org.nameBM : org.name}
                     fill
                     className="object-contain p-4"
@@ -64,7 +65,7 @@ export default function Organizers() {
               <div className="relative w-36 h-22 bg-surface border border-boundary rounded-xl flex items-center justify-center overflow-hidden group-hover:border-accent/50 transition-all duration-200" style={{ height: '5.5rem' }}>
                 {org.logo ? (
                   <Image
-                    src={org.logo}
+                    src={withBasePath(org.logo)}
                     alt={locale === 'bm' ? org.nameBM : org.name}
                     fill
                     className="object-contain p-3"

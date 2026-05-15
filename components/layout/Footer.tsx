@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { CONTACT, REGISTRATION_URL } from '@/data/contact'
 import Image from 'next/image'
+import { withBasePath } from '@/lib/site'
 
 const NAV_LINKS = [
   { key: 'about',      href: '#about' },
@@ -26,7 +27,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <Image 
-              src="/logos/logo-DEC4IR-white.png"
+              src={withBasePath('/logos/logo-DEC4IR-white.png')}
               alt="DEC4IR"
               width={120}
               height={20}

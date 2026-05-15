@@ -3,6 +3,7 @@ import { Inter, Squada_One, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { LocaleProvider } from '@/components/providers/LocaleProvider'
 import Navbar from '@/components/layout/Navbar'
+import { withBasePath } from '@/lib/site'
 
 const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 const squadaOne = Squada_One({ variable: '--font-squada-one', weight: '400', subsets: ['latin'] })
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Malaysia's premier online drone education competition for primary and secondary school students. Register now for DEC4IR 2026.",
   keywords: ['DEC4IR', 'drone education', 'Malaysia', 'STEM', 'quiz competition', 'school'],
+  icons: {
+    icon: withBasePath('/favicon.ico'),
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
