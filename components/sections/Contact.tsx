@@ -19,7 +19,7 @@ const CHANNELS = [
     href: CONTACT.facebook,
     display: 'DEC4IR',
     external: true,
-  },
+  }
 ]
 
 export default function Contact() {
@@ -54,7 +54,7 @@ export default function Contact() {
         </div>
 
         {/* Address */}
-        <div className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3">
+        <div className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:border-accent/50 hover:bg-elevated/80 transition-all duration-200">
           <span className="text-3xl">📍</span>
           <div>
             <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">

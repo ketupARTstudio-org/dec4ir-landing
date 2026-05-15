@@ -18,7 +18,7 @@ export default function Hero() {
       <HeroCarousel>
         <div className="min-h-screen flex flex-col items-center justify-center px-4 pt-16 pb-24">
           {/* Edition badge */}
-          <span className="inline-block mb-6 text-accent text-xs font-semibold tracking-[0.2em] uppercase border border-accent/40 rounded-full px-4 py-1.5">
+          <span className="inline-block mb-6 text-glow text-xs font-semibold tracking-[0.2em] uppercase border border-glow/40 rounded-full px-4 py-1.5">
             {t('edition')}
           </span>
 

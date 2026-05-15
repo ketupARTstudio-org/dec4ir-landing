@@ -233,6 +233,13 @@ All colors stored as CSS custom properties in `app/globals.css` for easy theming
 ### 6.5 Responsive Breakpoints
 Mobile-first. Tailwind defaults: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px.
 
+### 6.6 Scroll-to-Top Button
+- Locate at bottom right, absolute position.
+- Only appear after the user scrolls down a certain amount.
+- Circle shape with primary accent border, with an up icon in text secondary.
+- Once hover, transition to glow border, up icon to text primary.
+- Once click, scroll to the top.
+
 ---
 
 ## 7. Internationalization (i18n)

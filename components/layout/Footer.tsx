@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { CONTACT, REGISTRATION_URL } from '@/data/contact'
+import Image from 'next/image'
 
 const NAV_LINKS = [
   { key: 'about',      href: '#about' },
@@ -24,7 +25,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="flex flex-col gap-3">
-            <span className="text-accent font-bold text-xl tracking-wide">DEC4IR</span>
+            <Image 
+              src="/logos/logo-DEC4IR-white.png"
+              alt="DEC4IR"
+              width={120}
+              height={20}
+            />
             <p className="text-subtle text-sm leading-relaxed">
               Drone Edu Challenge IR 4.0 2026<br />
               7th Edition
@@ -33,7 +39,7 @@ export default function Footer() {
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-1 bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-accent/85 transition-colors w-fit"
+              className="inline-block mt-1 bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 transition-colors w-fit"
             >
               {tn('register')}
             </a>
@@ -58,7 +64,7 @@ export default function Footer() {
             <span className="text-primary font-semibold text-sm mb-1">Contact</span>
             <a
               href={CONTACT.emailHref}
-              className="text-subtle hover:text-accent text-sm transition-colors flex items-center gap-2"
+              className="text-subtle hover:text-glow text-sm transition-colors flex items-center gap-2"
             >
               <span>✉️</span> {CONTACT.email}
             </a>
@@ -66,10 +72,15 @@ export default function Footer() {
               href={CONTACT.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-subtle hover:text-accent text-sm transition-colors flex items-center gap-2"
+              className="text-subtle hover:text-glow text-sm transition-colors flex items-center gap-2"
             >
               <span>👥</span> Facebook
             </a>
+            <p
+              className="text-subtle hover:text-glow text-sm transition-colors flex items-center gap-2"
+            >
+              <span>📍</span> {CONTACT.address}
+            </p>
           </div>
         </div>
 

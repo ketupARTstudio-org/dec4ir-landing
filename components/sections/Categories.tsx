@@ -17,7 +17,7 @@ export default function Categories() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Competition categories */}
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-5 flex items-center gap-2">
+            <h3 className="text-lg text-primary mb-5 flex items-center gap-2">
               <span className="text-accent">🏫</span> {t('categoriesTitle')}
             </h3>
             <div className="flex flex-col gap-3">
@@ -41,7 +41,7 @@ export default function Categories() {
 
           {/* Certificate tiers */}
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-5 flex items-center gap-2">
+            <h3 className="text-lg text-primary mb-5 flex items-center gap-2">
               <span className="text-accent">🎓</span> {t('certificatesTitle')}
             </h3>
             <div className="flex flex-col gap-3">

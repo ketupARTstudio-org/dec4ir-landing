@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { REGISTRATION_URL } from '@/data/contact'
+import Image from 'next/image'
 
 const NAV_LINKS = [
   { key: 'about',      href: '#about' },
@@ -41,8 +42,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
-        <a href="#hero" className="text-accent font-bold text-lg tracking-wide shrink-0">
-          DEC4IR
+        <a href="#hero" className="shrink-0">
+          <Image 
+            src="/logos/logo-DEC4IR-white.png"
+            alt="DEC4IR"
+            width={120}
+            height={40}
+            className="h-9 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}
@@ -68,7 +76,7 @@ export default function Navbar() {
             href={REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-accent/85 transition-colors"
+            className="bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 transition-colors"
           >
             {t('register')}
           </a>

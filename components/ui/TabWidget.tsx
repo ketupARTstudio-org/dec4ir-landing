@@ -47,7 +47,7 @@ export default function TabWidget({ items }: TabWidgetProps) {
         {active && (
           <>
             <div className="text-5xl leading-none">{active.icon}</div>
-            <h3 className="text-xl font-semibold text-primary">{active.title}</h3>
+            <h3 className="text-xl text-primary">{active.title}</h3>
             <p className="text-secondary leading-relaxed">{active.description}</p>
           </>
         )}

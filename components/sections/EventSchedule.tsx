@@ -72,7 +72,7 @@ export default function EventSchedule() {
                   }`}
                 >
                   <p
-                    className={`text-xs font-semibold tracking-wider uppercase mb-1 ${
+                    className={`text-sm font-semibold tracking-wider uppercase mb-1 ${
                       isCurrent ? 'text-accent' : 'text-subtle'
                     }`}
                   >
@@ -83,10 +83,10 @@ export default function EventSchedule() {
                       </span>
                     )}
                   </p>
-                  <h3 className={`font-semibold mb-1 ${isCurrent ? 'text-[1rem]' : 'text-sm'}`}>
+                  <h3 className={`mb-1 text-2xl`}>
                     {t(`phases.${phase.id}`)}
                   </h3>
-                  <p className="text-xs leading-relaxed opacity-80">
+                  <p className="text-sm leading-relaxed opacity-80">
                     {t(`phaseDesc.${phase.id}`)}
                   </p>
                 </div>

@@ -1,3 +1,4 @@
+import ScrollToTop from '@/components/ui/ScrollToTop'
 import Hero from '@/components/sections/Hero'
 import About from '@/components/sections/About'
 import TournamentActivities from '@/components/sections/TournamentActivities'
@@ -22,6 +23,7 @@ export default function Home() {
       <FAQSection />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
   )
 }
