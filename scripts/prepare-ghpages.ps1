@@ -1,6 +1,5 @@
 #Requires -Version 5.1
 param(
-    [string]$Message = 'deploy: update GitHub Pages',
     [switch]$SkipBuild
 )
 
@@ -48,22 +47,8 @@ foreach ($dir in @('_next', '_not-found')) {
 
 Copy-Item -Path "$BuildOut\*" -Destination $Docs -Recurse -Force
 
-# 3. Commit & push
-Write-Step 'Committing docs/...'
-
-git add docs
-$status = git status --porcelain docs
-if (-not $status) {
-    Write-Host 'Nothing changed in docs/ -- already up to date.' -ForegroundColor Yellow
-    exit 0
-}
-
-git commit -m $Message
-if ($LASTEXITCODE -ne 0) { Abort 'git commit failed.' }
-
-Write-Step 'Pushing to origin/main...'
-git push origin main
-if ($LASTEXITCODE -ne 0) { Abort 'git push failed.' }
-
 Write-Host ''
-Write-Host 'Deployed! GitHub Pages will update at https://dec4ir.com in ~1 minute.' -ForegroundColor Green
+Write-Host 'docs/ is ready. Review the changes, then commit and push manually.' -ForegroundColor Green
+Write-Host '  git add docs' -ForegroundColor DarkGray
+Write-Host '  git commit -m "deploy: update GitHub Pages"' -ForegroundColor DarkGray
+Write-Host '  git push origin main' -ForegroundColor DarkGray
