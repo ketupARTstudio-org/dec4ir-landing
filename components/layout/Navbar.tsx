@@ -37,7 +37,7 @@ export default function Navbar() {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || menuOpen
-          ? 'bg-base/95 backdrop-blur-md border-b border-boundary'
+          ? 'bg-base/80 backdrop-blur-md border-b border-boundary'
           : 'bg-transparent'
       }`}
     >
@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Language toggle */}
           <button
             onClick={() => setLocale(locale === 'en' ? 'bm' : 'en')}
-            className="text-subtle hover:text-primary text-xs font-medium tracking-widest border border-boundary rounded px-2 py-1 transition-colors hover:border-accent/50"
+            className="text-subtle hover:text-primary text-xs font-medium tracking-widest border border-boundary rounded px-2 py-1 transition-colors hover:border-glow/50"
           >
             {locale === 'en' ? 'BM' : 'EN'}
           </button>
@@ -77,7 +77,7 @@ export default function Navbar() {
             href={REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 transition-colors"
+            className="bg-accent text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)"
           >
             {t('register')}
           </a>
@@ -111,7 +111,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+        className={`text-center lg:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
           menuOpen ? 'max-h-screen' : 'max-h-0'
         }`}
       >
@@ -131,7 +131,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="mt-2 bg-accent text-base font-semibold text-center text-sm px-4 py-3 rounded-lg hover:bg-accent/85 transition-colors"
+            className="mt-2 bg-accent text-white font-semibold text-center text-sm px-4 py-3 rounded-lg hover:bg-glow/85 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
           >
             {t('register')}
           </a>

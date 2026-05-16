@@ -13,6 +13,8 @@ export default function TournamentActivities() {
     icon: f.icon,
     title: tf(`${f.id}.title`),
     description: tf(`${f.id}.description`),
+    mediaPath: f.mediaPath,
+    mediaType: f.mediaType,
   }))
 
   return (

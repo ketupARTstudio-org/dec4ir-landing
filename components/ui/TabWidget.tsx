@@ -7,6 +7,8 @@ export interface TabItem {
   icon: string
   title: string
   description: string
+  mediaPath?: string
+  mediaType?: 'image' | 'video'
 }
 
 interface TabWidgetProps {
@@ -46,6 +48,25 @@ export default function TabWidget({ items }: TabWidgetProps) {
       <div className="lg:col-span-8 bg-elevated border border-boundary rounded-xl p-8 min-h-52 flex flex-col gap-5">
         {active && (
           <>
+            {active.mediaPath && active.mediaType === 'video' && (
+              <video
+                key={active.mediaPath}
+                src={active.mediaPath}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full max-h-56 rounded-lg object-cover"
+              />
+            )}
+            {active.mediaPath && active.mediaType === 'image' && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={active.mediaPath}
+                alt={active.title}
+                className="w-full max-h-56 rounded-lg object-cover"
+              />
+            )}
             <div className="text-5xl leading-none">{active.icon}</div>
             <h3 className="text-xl text-primary">{active.title}</h3>
             <p className="text-secondary leading-relaxed">{active.description}</p>

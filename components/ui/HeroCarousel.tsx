@@ -39,7 +39,7 @@ interface HeroCarouselProps {
 export default function HeroCarousel({
   slides = PLACEHOLDER_SLIDES,
   children,
-  intervalMs = 5000,
+  intervalMs = 1500,
 }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0)
 
@@ -56,7 +56,7 @@ export default function HeroCarousel({
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          className="absolute inset-0 transition-opacity duration-1500 ease-in-out"
           style={{ opacity: i === current ? 1 : 0 }}
         >
           {slide.type === 'gradient' && (
@@ -87,6 +87,7 @@ export default function HeroCarousel({
       <div className="absolute inset-0 bg-base/55 backdrop-blur-[1px]" />
 
       {/* Slide indicator dots */}
+      {/* 
       {slides.length > 1 && (
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {slides.map((_, i) => (
@@ -101,6 +102,7 @@ export default function HeroCarousel({
           ))}
         </div>
       )}
+      */}
 
       <div className="relative z-10 h-full">{children}</div>
     </div>

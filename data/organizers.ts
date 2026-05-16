@@ -36,7 +36,7 @@ export const ORGANIZERS: Organizer[] = [
     nameBM: 'Pusat Inovasi & Teknologi Sukan',
     shortName: 'SITC',
     logo: '/logos/strategic-partners/logo-SITC.png',
-    url: 'https://www.utm.my',
+    url: 'https://research.utm.my/sitc/',
   },
   {
     id: 'ihuEn',
@@ -44,8 +44,8 @@ export const ORGANIZERS: Organizer[] = [
     name: 'Institute of Human Centered Engineering',
     nameBM: 'Institut Kejuruteraan Berpusatkan Manusia',
     shortName: 'iHumEn',
-    logo: '/logos/strategic-partners/logo-iHumEn.png',
-    url: 'https://ihunen.utm.my',
+    logo: '/logos/strategic-partners/logo-iHuEn.png',
+    url: 'https://research.utm.my/ihumen/',
   },
   {
     id: 'dronecraft',
@@ -53,8 +53,8 @@ export const ORGANIZERS: Organizer[] = [
     name: 'Dronecraft Solutions',
     nameBM: 'Dronecraft Solutions',
     shortName: 'Dronecraft',
-    logo: '/logos/strategic-partners/logo-Dronecraft-Solutions.png',
-    url: 'https://www.dronecraft.com.my',
+    logo: '/logos/strategic-partners/logo-Dronecraft.png',
+    url: '#',
   },
   {
     id: 'ketupART',
@@ -62,7 +62,7 @@ export const ORGANIZERS: Organizer[] = [
     name: 'KetupART Studio',
     nameBM: 'KetupART Studio',
     shortName: 'KetupART',
-    logo: '/logos/strategic-partners/logo-KetupART-Studio-Standard-1.png',
-    url: 'https://www.ketupART.com',
+    logo: '/logos/strategic-partners/logo-KetupART-Studio-Standard-2.png',
+    url: 'https://www.ketupartstudio.com',
   },
 ]

@@ -97,18 +97,18 @@ Single scrollable landing page (`/`). Navigation anchors link to each section. N
 ### 5.4 Platform Features ("How It Works")
 Six feature cards showing what participants use to learn and compete:
 
-| Feature | Description |
-|---|---|
-| Drone Control Mobile App | Participants learn the basic drone input via mobile. |
-| VR Training | Immersive virtual reality drone training environment. |
-| Code Block Flight Simulation | Visual programming to control drone flight paths. |
-| Drone Block Coding 101 Workbook | Introduces students to the fundamentals of STEM-based drone programming. Using visual block coding, learners explore essential programming concepts such as sequencing, loops, and conditional logic while applying them to real-world drone flight missions. Each lesson is designed to gradually build coding proficiency, problem-solving skills, and creativity as students program drones to perform tasks like take-off, navigation, obstacle avoidance, and landing. This workbook not only fosters computational thinking but also inspires innovation, teamwork, and curiosity in STEM education. | 
-| Video Learning | Structured video curriculum for competition preparation. |
-| Quiz Platform | Online quiz system used for trial, screening to test the student how far they gain the drone`s knowledge. |
-| Assignment | Shortlisted students will be continue to final assignment to improve soft and hard skills, hands-on practice on drone structure  |
-| MOE Certified Certificate | Ministry of Education Malaysia recognised certificate. |
+| Feature | Description | Image/Video |
+|---|---|---|
+| Drone Control Mobile App | Participants learn the basic drone input via mobile. | public/media/features/gofly-mobile.jpeg |
+| VR Training | Immersive virtual reality drone training environment. | public/media/features/gofly.mp4 |
+| Code Block Flight Simulation | Visual programming to control drone flight paths. | public/media/features/droneblock.mp4 |
+| Drone Block Coding 101 Workbook | Introduces students to the fundamentals of STEM-based drone programming. Using visual block coding, learners explore essential programming concepts such as sequencing, loops, and conditional logic while applying them to real-world drone flight missions. Each lesson is designed to gradually build coding proficiency, problem-solving skills, and creativity as students program drones to perform tasks like take-off, navigation, obstacle avoidance, and landing. This workbook not only fosters computational thinking but also inspires innovation, teamwork, and curiosity in STEM education. | public/media/features/droneblockcodingworkbook.jpg |
+| Video Learning | Structured video curriculum for competition preparation. | public/media/features/elearning2.mp4 |
+| Quiz Platform | Online quiz system used for trial, screening to test the student how far they gain the drone`s knowledge. | public/media/features/kuiz.mp4 |
+| Assignment | Shortlisted students will be continue to final assignment to improve soft and hard skills, hands-on practice on drone structure  | public/media/features/teamwork.mp4 |
+| MOE Certified Certificate | Ministry of Education Malaysia recognised certificate. | public/media/features/certificate.png |
 
-Layout: tab widget, 4:8 (tabs:content) on desktop, single column on mobile (tabs at top, bottom is content). Each content: image/GIF + title + 1-line description.
+Layout: tab widget, 4:8 (tabs:content) on desktop, single column on mobile (tabs at top, bottom is content). Each content: image/GIF/video + title + 1-line description.
 
 ### 5.5 Event Schedule / Timeline
 Horizontal timeline on desktop, vertical on mobile.
@@ -382,17 +382,7 @@ services:
 
 ---
 
-## 11. Placeholder Content Needed (from organizer)
-
-The following must be provided before the site can go fully live:
-
-| Item | Section | Status |
-|---|---|---|
-| Hero carousel media (GIF/video) | Hero | Ready (in /public) |
-
----
-
-## 12. Out of Scope
+## 11. Out of Scope
 
 - Results page (external link only — this site will link to it when ready)
 - Prize/cash award section (deferred)

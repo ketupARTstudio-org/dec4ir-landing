@@ -48,7 +48,7 @@ export default function Hero() {
             href={REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-base font-bold px-8 py-3.5 rounded-xl text-lg hover:bg-accent/85 hover:scale-105 transition-all duration-200 shadow-lg shadow-accent/20"
+            className="bg-accent text-white font-bold px-8 py-3.5 rounded-xl text-lg hover:bg-glow/85 hover:scale-105 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
           >
             {t('cta')}
           </a>
@@ -66,16 +66,16 @@ export default function Hero() {
                   className="flex flex-col items-center gap-2 group"
                 >
                   {org.logo ? (
-                    <div className="relative h-12 w-28 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div className="relative h-18 w-30 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden p-2 group-hover:bg-white/20 group-hover:border-glow/50 group-hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200">
                       <Image
                         src={withBasePath(org.logo)}
                         alt={locale === 'bm' ? org.nameBM : org.name}
                         fill
-                        className="object-contain"
+                        className="object-contain p-3"
                       />
                     </div>
                   ) : (
-                    <div className="h-10 px-4 bg-surface border border-boundary rounded-lg flex items-center justify-center text-secondary text-sm font-semibold group-hover:border-accent/50 group-hover:text-accent transition-all">
+                    <div className="h-10 px-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center text-secondary text-sm font-semibold group-hover:bg-white/20 group-hover:border-glow/50 group-hover:text-accent group-hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200">
                       {org.shortName}
                     </div>
                   )}
