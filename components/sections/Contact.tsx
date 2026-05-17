@@ -38,14 +38,14 @@ export default function Contact() {
               href={ch.href}
               target={ch.external ? '_blank' : undefined}
               rel={ch.external ? 'noopener noreferrer' : undefined}
-              className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:border-accent/50 hover:bg-elevated/80 transition-all duration-200 group"
+              className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:bg-elevated/80 hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200 group"
             >
               <span className="text-3xl">{ch.icon}</span>
               <div>
                 <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">
                   {t(ch.key)}
                 </p>
-                <p className="text-primary text-sm font-medium group-hover:text-accent transition-colors">
+                <p className="text-primary text-sm font-medium group-hover:text-glow transition-colors">
                   {ch.display}
                 </p>
               </div>
@@ -54,13 +54,13 @@ export default function Contact() {
         </div>
 
         {/* Address */}
-        <div className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:border-accent/50 hover:bg-elevated/80 transition-all duration-200">
+        <div className="group bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:bg-elevated/80 hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200">
           <span className="text-3xl">📍</span>
           <div>
             <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">
               {t('address')}
             </p>
-            <p className="text-primary text-sm font-medium leading-relaxed">
+            <p className="text-primary text-sm font-medium leading-relaxed group-hover:text-glow transition-colors">
               {CONTACT.address}
             </p>
           </div>

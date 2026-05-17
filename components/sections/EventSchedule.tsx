@@ -29,7 +29,21 @@ export default function EventSchedule() {
   }
 
   return (
-    <section id="schedule" className="bg-base py-24 px-4 md:px-8">
+    <section id="schedule" className="bg-base py-24 px-4 md:px-8 relative overflow-hidden">
+      {/* Decorative ring — right side, partially cropped */}
+      <div
+        className="pointer-events-none select-none absolute top-1/2 -translate-y-1/2 right-0 translate-x-[30%] md:translate-x-[30%] w-[50vw] md:w-[42vw] max-w-140 opacity-20"
+        aria-hidden="true"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ring-techs-1.svg"
+          alt=""
+          className="w-full h-auto drop-shadow-[0_0_40px_rgba(99,102,241,0.8)]"
+          draggable="false"
+        />
+      </div>
+
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t('title')}</h2>

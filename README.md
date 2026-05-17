@@ -1,4 +1,6 @@
-This is a static-exported [Next.js](https://nextjs.org) landing page. Production builds emit plain HTML/CSS/JS into `out/` and can be served by any static web server.
+<img src="public/logos/logo-favicon.svg" alt="DEC4IR logo" height="80">
+
+This is a [Next.js](https://nextjs.org)/[React](https://react.dev/) SPA for DEC4IR 2026 - an online drone education quiz competition landing page with event schedule, sponsor showcase, and FAQ. Production builds emit plain HTML/CSS/JS into `out/` and can be served by any static web server.
 
 ## Getting Started
 
@@ -29,6 +31,28 @@ Serve the exported files locally with:
 
 ```bash
 npm start
+```
+
+## Deploy to GitHub Pages
+
+Use the PowerShell script at `scripts/prepare-ghpages.ps1` to build and sync the output to `docs/`:
+
+```powershell
+.\scripts\prepare-ghpages.ps1
+```
+
+This builds for domain root (`/`), then syncs the output into `docs/`. Once done, review the changes and push:
+
+```powershell
+git add docs
+git commit -m "deploy: update GitHub Pages"
+git push origin main
+```
+
+Pass `-SkipBuild` to skip the build step and only re-sync an existing `.next-static/` output:
+
+```powershell
+.\scripts\prepare-ghpages.ps1 -SkipBuild
 ```
 
 ## Docker

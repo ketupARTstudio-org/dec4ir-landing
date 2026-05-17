@@ -20,7 +20,7 @@ export default function Merchandise() {
             href={SHOPEE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 border border-accent text-accent font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-accent hover:text-base transition-all duration-200"
+            className="shrink-0 border border-accent text-accent font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-glow  hover:text-base hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200"
           >
             {t('viewStore')} →
           </a>
@@ -30,7 +30,7 @@ export default function Merchandise() {
           {MERCH_ITEMS.map(item => (
             <div
               key={item.id}
-              className="group bg-elevated border border-boundary rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-200 hover:-translate-y-1"
+              className="group bg-elevated border border-boundary rounded-xl overflow-hidden hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200 hover:-translate-y-1"
             >
               {/* Image / placeholder */}
               <div className={`relative aspect-square bg-gradient-to-br ${item.gradient}`}>
@@ -50,7 +50,7 @@ export default function Merchandise() {
                   href={item.url ? item.url : SHOPEE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent text-xs font-semibold hover:underline"
+                  className="text-secondary text-xs font-semibold hover:underline group-hover:text-glow"
                 >
                   {t('shopNow')} →
                 </a>

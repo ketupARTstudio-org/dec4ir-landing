@@ -12,7 +12,7 @@ export default function AccordionItem({ question, answer, defaultOpen = false }:
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div className="bg-elevated border border-boundary rounded-xl overflow-hidden transition-colors hover:border-accent/40">
+    <div className="bg-elevated border border-boundary rounded-xl overflow-hidden transition-all duration-200 hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)]">
       <button
         onClick={() => setIsOpen(prev => !prev)}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-transparent text-inherit"
@@ -20,8 +20,8 @@ export default function AccordionItem({ question, answer, defaultOpen = false }:
       >
         <span className="font-medium text-primary text-sm">{question}</span>
         <span
-          className={`text-accent shrink-0 transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
+          className={`shrink-0 transition-transform duration-300 ${
+            isOpen ? 'text-glow rotate-180' : 'text-accent'
           }`}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

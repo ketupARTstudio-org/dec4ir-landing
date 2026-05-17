@@ -29,7 +29,7 @@ export default function Organizers() {
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-4"
             >
-              <div className="relative w-52 h-32 bg-surface border border-boundary rounded-xl flex items-center justify-center overflow-hidden group-hover:border-accent/50 transition-all duration-200">
+              <div className="relative w-52 h-32 bg-white/5 border border-boundary rounded-xl flex items-center justify-center overflow-hidden group-hover:border-glow/50 group-hover:shadow-[0_0_12px_var(--color-glow)] group-hover:bg-white/20 transition-all duration-200">
                 {org.logo ? (
                   <Image
                     src={withBasePath(org.logo)}
@@ -42,7 +42,7 @@ export default function Organizers() {
                 )}
               </div>
               <div className="text-center">
-                <p className="text-primary text-sm font-medium group-hover:text-accent transition-colors">
+                <p className="text-primary text-sm font-medium group-hover:text-glow transition-colors">
                   {locale === 'bm' ? org.nameBM : org.name}
                 </p>
                 <p className="text-subtle text-xs mt-0.5">{org.shortName}</p>
@@ -62,7 +62,7 @@ export default function Organizers() {
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-3"
             >
-              <div className="relative w-36 h-22 bg-surface border border-boundary rounded-xl flex items-center justify-center overflow-hidden group-hover:border-accent/50 transition-all duration-200" style={{ height: '5.5rem' }}>
+              <div className="relative w-36 h-22 bg-white/5 border border-boundary rounded-xl flex items-center justify-center overflow-hidden group-hover:border-glow/50 group-hover:shadow-[0_0_12px_var(--color-glow)] group-hover:bg-white/20 transition-all duration-200" style={{ height: '5.5rem' }}>
                 {org.logo ? (
                   <Image
                     src={withBasePath(org.logo)}
@@ -75,7 +75,7 @@ export default function Organizers() {
                 )}
               </div>
               <div className="text-center">
-                <p className="text-primary text-xs font-medium group-hover:text-accent transition-colors">
+                <p className="text-primary text-xs font-medium group-hover:text-glow transition-colors">
                   {locale === 'bm' ? org.nameBM : org.name}
                 </p>
                 <p className="text-subtle text-xs mt-0.5">{org.shortName}</p>
