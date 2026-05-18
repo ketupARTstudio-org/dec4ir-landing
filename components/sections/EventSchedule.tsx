@@ -87,17 +87,17 @@ export default function EventSchedule() {
                 >
                   <p
                     className={`text-sm font-semibold tracking-wider uppercase mb-1 ${
-                      isCurrent ? 'text-accent' : 'text-subtle'
+                      isCurrent ? 'text-glow' : 'text-subtle'
                     }`}
                   >
                     {formatDate(phase.isoDate)}
                     {isCurrent && (
-                      <span className="ml-2 text-accent text-[10px] border border-accent/50 rounded-full px-2 py-0.5 normal-case tracking-normal">
+                      <span className="ml-2 text-secondary text-[10px] border border-subtle/50 rounded-full px-2 py-0.5 normal-case tracking-normal hover:text-primary hover:border-glow transition-color duration-300">
                         NEXT
                       </span>
                     )}
                   </p>
-                  <h3 className={`mb-1 text-2xl`}>
+                  <h3 className={`mb-1 text-2xl hover:text-glow transition-color duration-100`}>
                     {t(`phases.${phase.id}`)}
                   </h3>
                   <p className="text-sm leading-relaxed opacity-80">

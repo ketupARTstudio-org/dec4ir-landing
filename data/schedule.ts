@@ -14,7 +14,10 @@ export interface Phase {
 
 export const PHASES: Phase[] = [
   { id: 'regOpen',       isoDate: '2026-05-13' },
-  { id: 'regClose',      isoDate: '2026-06-16' },
+  { id: 'regClose',      isoDate: '2026-06-30' },
+]
+
+const HIDDEN_PHASES: Phase[] = [
   { id: 'trialQuiz',     isoDate: '2026-06-19' },
   { id: 'screeningQuiz', isoDate: '2026-06-30' },
   { id: 'shortlist',     isoDate: '2026-07-07' },

@@ -14,10 +14,40 @@ export default function Hero() {
 
   const taglines = [t('tagline0'), t('tagline1'), t('tagline2')]
 
+  const mainOrgs = ORGANIZERS.filter(o => o.tier === 'main')
+  const strategicOrgs = ORGANIZERS.filter(o => o.tier === 'strategic')
+
   return (
     <section id="hero" className="relative min-h-screen">
       <HeroCarousel>
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 pt-16 pb-24">
+        <div className="flex flex-col items-center justify-center px-4 pt-16 pb-16">
+          <div className="flex sm:flex-row items-center justify-center md:gap-2 my-4 md:my-8">
+            {/* Main organiser */}
+            {mainOrgs.map(org => (
+              <a
+                key={org.id}
+                href={org.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center"
+              >
+                <div className="relative w-40 h-28 md:w-52 md:h-32 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-accent)_0%,transparent_70%)] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                  {org.logo ? (
+                    <Image
+                      src={withBasePath(org.logo)}
+                      alt={locale === 'bm' ? org.nameBM : org.name}
+                      fill
+                      className="object-contain p-2"
+                    />
+                  ) : (
+                    <span className="text-secondary font-semibold text-lg">{org.shortName}</span>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+          
           {/* Edition badge */}
           <span className="inline-block mb-6 text-glow text-xs font-semibold tracking-[0.2em] uppercase border border-glow/40 rounded-full px-4 py-1.5">
             {t('edition')}
@@ -55,9 +85,8 @@ export default function Hero() {
 
           {/* Organizers row */}
           <div className="mt-16 flex flex-col items-center gap-4">
-            <p className="text-subtle text-xs tracking-widest uppercase">{t('organizersLabel')}</p>
             <div className="flex items-center gap-8 flex-wrap justify-center">
-              {ORGANIZERS.map(org => (
+              {strategicOrgs.map(org => (
                 <a
                   key={org.id}
                   href={org.url}
