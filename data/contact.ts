@@ -6,4 +6,4 @@ export const CONTACT = {
   address: 'Sport Innovation & Technology Center (SITC), Level 2, Wing B, V01, Faculty of Engineering, Universiti Teknologi Malaysia, 81310 Johor Bahru, Johor',
 } as const
 
-export const REGISTRATION_URL = '#'
+export const REGISTRATION_URL = 'https://dec4ir.org/portal'

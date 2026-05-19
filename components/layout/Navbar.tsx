@@ -75,8 +75,8 @@ export default function Navbar() {
 
           <a
             href={REGISTRATION_URL}
-            // target="_blank"
-            // rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-accent text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)"
           >
             {t('register')}
@@ -128,9 +128,9 @@ export default function Navbar() {
           ))}
           <a
             href={REGISTRATION_URL}
-            // target="_blank"
-            // rel="noopener noreferrer"
-            // onClick={() => setMenuOpen(false)}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
             className="mt-2 bg-accent text-white font-semibold text-center text-sm px-4 py-3 rounded-lg hover:bg-glow/85 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
           >
             {t('register')}
