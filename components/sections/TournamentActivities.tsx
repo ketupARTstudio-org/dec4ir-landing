@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import TabWidget, { type TabItem } from '@/components/ui/TabWidget'
 import { FEATURES } from '@/data/platform-features'
@@ -7,6 +8,24 @@ import { FEATURES } from '@/data/platform-features'
 export default function TournamentActivities() {
   const t = useTranslations('activities')
   const tf = useTranslations('features')
+  const widgetRef = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = widgetRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.1 },
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   const items: TabItem[] = FEATURES.map(f => ({
     id: f.id,
@@ -34,7 +53,16 @@ export default function TournamentActivities() {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t('title')}</h2>
           <p className="text-secondary">{t('subtitle')}</p>
         </div>
-        <TabWidget items={items} />
+        <div
+          ref={widgetRef}
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+          }}
+        >
+          <TabWidget items={items} />
+        </div>
       </div>
     </section>
   )

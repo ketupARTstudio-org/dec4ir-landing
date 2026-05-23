@@ -12,15 +12,6 @@ export interface Organizer {
 
 export const ORGANIZERS: Organizer[] = [
   {
-    id: 'utm',
-    tier: 'main',
-    name: 'Universiti Teknologi Malaysia',
-    nameBM: 'Universiti Teknologi Malaysia',
-    shortName: 'UTM',
-    logo: '/logos/organizers/logo-UTM-standard.png',
-    url: 'https://www.utm.my',
-  },
-  {
     id: 'moe',
     tier: 'main',
     name: 'Ministry of Education Malaysia',
@@ -28,6 +19,15 @@ export const ORGANIZERS: Organizer[] = [
     shortName: 'MOE / KPM',
     logo: '/logos/organizers/logo-KPM-bm-white.png',
     url: 'https://www.moe.gov.my',
+  },
+  {
+    id: 'utm',
+    tier: 'main',
+    name: 'Universiti Teknologi Malaysia',
+    nameBM: 'Universiti Teknologi Malaysia',
+    shortName: 'UTM',
+    logo: '/logos/organizers/logo-UTM-standard.png',
+    url: 'https://www.utm.my',
   },
   {
     id: 'sitc',

@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { PHASES, findNextPhaseIndex } from '@/data/schedule'
@@ -18,6 +19,24 @@ export default function EventSchedule() {
   const t = useTranslations('schedule')
   const { locale } = useLocale()
   const nextIdx = findNextPhaseIndex()
+  const sectionRef = useRef<HTMLElement>(null)
+  const [ringVisible, setRingVisible] = useState(false)
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRingVisible(true)
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.15 },
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   function formatDate(isoDate: string) {
     const intlLocale = locale === 'bm' ? 'ms-MY' : 'en-MY'
@@ -29,10 +48,10 @@ export default function EventSchedule() {
   }
 
   return (
-    <section id="schedule" className="bg-base py-24 px-4 md:px-8 relative overflow-hidden">
+    <section id="schedule" ref={sectionRef} className="bg-base py-24 px-4 md:px-8 relative overflow-hidden">
       {/* Decorative ring — right side, partially cropped */}
       <div
-        className="pointer-events-none select-none absolute top-1/2 -translate-y-1/2 right-0 translate-x-[30%] md:translate-x-[30%] w-[50vw] md:w-[42vw] max-w-140 opacity-20"
+        className={`pointer-events-none select-none absolute top-1/2 -translate-y-1/2 right-0 translate-x-[30%] md:translate-x-[30%] w-[50vw] md:w-[42vw] max-w-140 ${ringVisible ? 'ring-visible' : 'opacity-0'}`}
         aria-hidden="true"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}

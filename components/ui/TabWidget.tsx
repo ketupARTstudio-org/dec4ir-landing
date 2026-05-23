@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export interface TabItem {
   id: string
@@ -17,10 +17,30 @@ interface TabWidgetProps {
 
 export default function TabWidget({ items }: TabWidgetProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? '')
+  const [contentVisible, setContentVisible] = useState(true)
+  const pendingIdRef = useRef<string | null>(null)
+
   const active = items.find(it => it.id === activeId) ?? items[0]
 
+  function selectTab(id: string) {
+    if (id === activeId) return
+    pendingIdRef.current = id
+    setContentVisible(false)
+  }
+
+  useEffect(() => {
+    if (contentVisible || !pendingIdRef.current) return
+    const id = pendingIdRef.current
+    const timer = setTimeout(() => {
+      setActiveId(id)
+      pendingIdRef.current = null
+      setContentVisible(true)
+    }, 150)
+    return () => clearTimeout(timer)
+  }, [contentVisible])
+
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-3">
+    <div className="group flex flex-col lg:grid lg:grid-cols-12 gap-3">
       {/* Tab list — horizontal scroll on mobile, vertical on desktop */}
       <div className="lg:col-span-4 flex flex-row lg:flex-col gap-1 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
         {items.map(item => {
@@ -28,7 +48,7 @@ export default function TabWidget({ items }: TabWidgetProps) {
           return (
             <button
               key={item.id}
-              onClick={() => setActiveId(item.id)}
+              onClick={() => selectTab(item.id)}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left shrink-0 lg:shrink transition-all duration-200 ${
                 isActive
                   ? 'bg-glow/10 border-l-2 border-glow text-glow'
@@ -45,7 +65,14 @@ export default function TabWidget({ items }: TabWidgetProps) {
       </div>
 
       {/* Content panel */}
-      <div className="lg:col-span-8 card-glass-border rounded-xl p-8 min-h-52 flex flex-col gap-5">
+      <div
+        className="lg:col-span-8 card-glass-border rounded-xl p-8 min-h-52 flex flex-col gap-5 transition-shadow duration-300 group-hover:shadow-[0_0_12px_var(--color-glow)]"
+        style={{
+          borderWidth: '3px',
+          opacity: contentVisible ? 1 : 0,
+          transition: 'opacity 0.15s ease-in-out',
+        }}
+      >
         {active && (
           <>
             {active.mediaPath && active.mediaType === 'video' && (

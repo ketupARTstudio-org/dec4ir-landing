@@ -211,8 +211,8 @@ CSS custom properties defined in `app/globals.css`:
 
 | Token | Value | Usage |
 |---|---|---|
-| `--color-base` | `#1e1e1e` | Page background (`body`) |
-| `--color-surface` | `#141414` | Darker sections, footer |
+| `--color-base` | `#050f1e` | Page background (`body`) |
+| `--color-surface` | `#141414` | Darker sections |
 | `--color-elevated` | `#262626` | Solid card/panel background (Organizers, non-glass areas) |
 | `--color-glass` | `rgba(38,38,38,0.45)` | Glass card/panel background (**new token**) |
 | `--color-boundary` | `#3a3a3a` | Default borders |
@@ -290,8 +290,37 @@ The bottom of the Hero section fades seamlessly into the About section's radial 
 - Smooth CSS transitions (200–300ms ease)
 - Hero carousel cross-fade
 - FAQ accordion expand/collapse
-- **No scroll-triggered animations** (performance + accessibility)
 - **No parallax or particle effects**
+- Scroll-triggered animations are permitted only for the specific cases listed below; all others remain off.
+
+#### 6.8.1 Hero — Drone wireframe fade-in
+- The two drone wireframe SVGs (left and right edges of the hero) slide in from their respective edges and fade from transparent to `opacity-30`.
+- Direction: left drone slides in from the left (`translateX(-60%) → -translateX(50%)`); right drone from the right (mirror).
+- Trigger: once on initial page load (CSS `@keyframes` + `animation`, no IntersectionObserver).
+- Duration: ~800 ms ease-out, with a short stagger between left and right (~150 ms).
+
+#### 6.8.2 About — Stats counter
+- Each stat card's numeric value counts up from 0 to its target value when the About section first enters the viewport.
+- Trigger: `IntersectionObserver` on the `#about` section; fires once (disconnect after first trigger).
+- Duration: ~1.5 s ease-out for the count animation.
+- Suffix (e.g. `++`) appended after the number, not animated.
+- The raw numeric targets are stored alongside their display suffix in a local constant (not inside i18n strings) so the counter can interpolate cleanly; only the label text remains in i18n.
+
+#### 6.8.3 Tournament Activities — Tab widget fade-in
+- **Section entry:** when the `#activities` section first enters the viewport, the entire tab widget fades in (`opacity: 0 → 1`) and slides up slightly (`translateY(16px) → 0`). Trigger: `IntersectionObserver`, fires once.
+- **Tab switch:** when the user switches tabs, the content panel cross-fades (`opacity: 0 → 1`). Duration: ~200 ms.
+
+#### 6.8.4 Event Schedule — Decorative ring
+- **Fade-in from right:** on scroll into view, the ring fades in (`opacity: 0 → 0.2`) and slides in from the right (`translateX(50%) → translateX(30%)`). Trigger: `IntersectionObserver`, fires once. Duration: ~800 ms ease-out.
+- **Slow rotation:** continuous CSS `@keyframes` rotation — full 360° over ~30 s linear, infinite. Starts after the fade-in completes.
+
+#### 6.8.5 Navbar — Scrollspy
+- An `IntersectionObserver` watches each section element (`#hero`, `#about`, `#activities`, …, `#contact`).
+- The section whose top edge is nearest the top of the viewport (or the one with the most visible area) is considered "active."
+- Active nav link: `text-glow` color + subtle text-shadow glow (`0 0 8px var(--color-glow)` at ~60% opacity).
+- Inactive nav links: default `text-secondary` (unchanged from current).
+- Applies to both desktop nav links and mobile menu links.
+- No active state on the "Register Now" CTA button.
 
 ### 6.9 Responsive Breakpoints
 Mobile-first. Tailwind defaults: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px.

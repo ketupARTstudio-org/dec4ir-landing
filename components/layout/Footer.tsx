@@ -21,7 +21,17 @@ export default function Footer() {
   const tf = useTranslations('footer')
 
   return (
-    <footer className="bg-base border-t border-boundary">
+    <footer className="relative overflow-hidden bg-base border-t border-boundary">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-100 md:w-50 lg:w-100 pointer-events-none select-none opacity-30 translate-x-1/2 scale-x-[-1]">
+        <Image
+          src={withBasePath('/drone-wireframe.svg')}
+          alt=""
+          width={200}
+          height={121}
+          className="w-full h-auto"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
@@ -32,10 +42,10 @@ export default function Footer() {
               width={120}
               height={20}
             />
-            <p className="text-subtle text-sm leading-relaxed">
+            <h2 className="text-lg text-primary leading-relaxed">
               Drone Edu Challenge IR 4.0 2026<br />
               7th Edition
-            </p>
+            </h2>
             <a
               href={REGISTRATION_URL}
               target="_blank"
@@ -53,7 +63,7 @@ export default function Footer() {
               <a
                 key={key}
                 href={href}
-                className="text-subtle hover:text-primary text-sm transition-colors"
+                className="text-subtle hover:text-glow text-sm transition-colors"
               >
                 {tn(key)}
               </a>
@@ -87,7 +97,7 @@ export default function Footer() {
 
         <div className="border-t border-boundary pt-6 flex flex-col md:flex-row items-center justify-between gap-2 text-subtle text-xs">
           <span>© 2026 DEC4IR. {tf('rights')}</span>
-          <span>{tf('organizedBy')} Universiti Teknologi Malaysia &amp; Kementerian Pendidikan Malaysia</span>
+          <span>{tf('organizedBy')} Kementerian Pendidikan Malaysia &amp; Universiti Teknologi Malaysia </span>
         </div>
       </div>
     </footer>

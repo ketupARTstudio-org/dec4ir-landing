@@ -31,8 +31,7 @@ export default function Contact() {
       className="py-24 px-4 md:px-8"
       style={{
         background: [
-          'radial-gradient(ellipse 80% 60% at 50% 30%, #00203a 0%, #050f1e 65%)',
-          'radial-gradient(ellipse 40% 40% at 70% 70%, #00d4ff0e 0%, transparent 60%)',
+          'radial-gradient(ellipse 55% 55% at 50% 50%, #00203a 0%, transparent 70%)',
           'var(--color-base)',
         ].join(', '),
       }}
@@ -48,14 +47,14 @@ export default function Contact() {
               href={ch.href}
               target={ch.external ? '_blank' : undefined}
               rel={ch.external ? 'noopener noreferrer' : undefined}
-              className="group card-glass-border rounded-xl p-6 flex flex-col items-center gap-3 transition-all duration-200"
+              className="group card-glass-border rounded-xl p-6 flex flex-col items-center gap-3 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200"
             >
               <span className="text-3xl">{ch.icon}</span>
               <div>
                 <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">
                   {t(ch.key)}
                 </p>
-                <p className="text-primary text-sm font-medium group-hover:text-glow transition-colors">
+                <p className="text-primary text-sm font-medium group-hover:text-glow transition-colors duration-200">
                   {ch.display}
                 </p>
               </div>
@@ -64,13 +63,13 @@ export default function Contact() {
         </div>
 
         {/* Address */}
-        <div className="group card-glass-border rounded-xl p-6 flex flex-col items-center gap-3 transition-all duration-200">
+        <div className="group card-glass-border rounded-xl p-6 flex flex-col items-center gap-3 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200">
           <span className="text-3xl">📍</span>
           <div>
             <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">
               {t('address')}
             </p>
-            <p className="text-primary text-sm font-medium leading-relaxed group-hover:text-glow transition-colors">
+            <p className="text-primary text-sm font-medium leading-relaxed group-hover:text-glow transition-colors duration-200">
               {CONTACT.address}
             </p>
           </div>

@@ -20,7 +20,8 @@
     "tagline2": "Prestigious National Certificate",
     "cta": "Register Now",
     "eventPeriod": "May – August 2026",
-    "organizersLabel": "Organized by"
+    "organizersLabel": "Organized by",
+    "scroll": "Scroll"
   },
   "about": {
     "title": "About DEC4IR",
@@ -123,7 +124,7 @@
   "organizers": {
     "title": "Organizers",
     "mainTitle": "Main Organizers",
-    "strategicPartnersTitle": "Strategic Partners"
+    "strategicPartnersTitle": "Collaborators"
   },
   "merch": {
     "title": "Official Merchandise",

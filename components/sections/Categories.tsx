@@ -69,7 +69,7 @@ export default function Categories() {
 
             {/* MOE note */}
             <p className="mt-4 text-subtle text-xs flex items-center gap-2">
-              <span className="text-accent">✓</span> {t('moeNote')}
+              <span className="text-glow">✓</span> {t('moeNote')}
             </p>
           </div>
         </div>

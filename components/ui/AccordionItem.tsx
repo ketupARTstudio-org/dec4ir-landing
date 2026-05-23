@@ -12,7 +12,7 @@ export default function AccordionItem({ question, answer, defaultOpen = false }:
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div className="card-glass-border rounded-xl overflow-hidden">
+    <div className="card-glass-border rounded-xl overflow-hidden hover:shadow-[0_0_12px_var(--color-glow)] transition-shadow duration-200">
       <button
         onClick={() => setIsOpen(prev => !prev)}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-transparent text-inherit"

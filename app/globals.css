@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: #050f1e;
   color: #ffffff;
   font-family: var(--font-inter), system-ui, sans-serif;
 }
@@ -58,4 +58,40 @@ h1, h2, h3 {
   background:
     linear-gradient(rgba(20, 20, 20, 1.0), rgba(20, 20, 20, 1.0)) padding-box,
     linear-gradient(to right, #f5a83a, #a01450) border-box;
+}
+
+/* ── Hero drone wireframe animations ──────────────────── */
+@keyframes drone-left-in {
+  from { opacity: 0; translate: -3rem 0; }
+  to   { opacity: 0.3; translate: 0 0; }
+}
+@keyframes drone-right-in {
+  from { opacity: 0; translate: -3rem 0; }
+  to   { opacity: 0.3; translate: 0 0; }
+}
+
+/* ── EventSchedule ring animations ────────────────────── */
+@keyframes ring-slide-in {
+  from { opacity: 0; translate: 5rem 0; }
+  to   { opacity: 0.2; translate: 0 0; }
+}
+@keyframes ring-spin {
+  to { rotate: 360deg; }
+}
+.ring-visible {
+  animation:
+    ring-slide-in 0.8s ease-out forwards,
+    ring-spin 30s linear infinite;
+}
+
+/* ── Scroll indicator bounce ───────────────────────────── */
+@keyframes scroll-bounce {
+  0%, 100% { translate: 0 0; }
+  50%       { translate: 0 8px; }
+}
+
+/* ── Navbar scrollspy active link ──────────────────────── */
+.nav-active {
+  color: var(--color-glow);
+  text-shadow: 0 0 8px rgba(230, 145, 37, 0.6);
 }

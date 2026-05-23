@@ -51,7 +51,7 @@ export default function Organizers() {
           ))}
         </div>
 
-        {/* Strategic Partners */}
+        {/* Collaborators */}
         <p className="text-secondary mb-10">{t('strategicPartnersTitle')}</p>
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {strategicOrgs.map(org => (

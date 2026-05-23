@@ -1,19 +1,56 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useEffect, useRef, useState } from 'react'
 
-const STATS = [
-  { valueKey: 'stat1Value', labelKey: 'stat1Label' },
-  { valueKey: 'stat2Value', labelKey: 'stat2Label' },
-  { valueKey: 'stat3Value', labelKey: 'stat3Label' },
+const STAT_DATA = [
+  { labelKey: 'stat1Label' as const, raw: 100000, suffix: '+' },
+  { labelKey: 'stat2Label' as const, raw: 1000,   suffix: '+' },
+  { labelKey: 'stat3Label' as const, raw: 6,       suffix: ''   },
 ] as const
 
 export default function About() {
   const t = useTranslations('about')
+  const sectionRef = useRef<HTMLElement>(null)
+  const [counts, setCounts] = useState([0, 0, 0])
+  const [started, setStarted] = useState(false)
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true)
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.2 },
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!started) return
+    const targets = STAT_DATA.map(s => s.raw)
+    const duration = 1500
+    const start = performance.now()
+
+    const tick = (now: number) => {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCounts(targets.map(t => Math.round(t * eased)))
+      if (progress < 1) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }, [started])
 
   return (
     <section
       id="about"
+      ref={sectionRef}
       className="py-24 px-4 md:px-8"
       style={{
         background: [
@@ -36,13 +73,13 @@ export default function About() {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4">
-            {STATS.map(({ valueKey, labelKey }) => (
+            {STAT_DATA.map(({ labelKey, suffix }, i) => (
               <div
-                key={valueKey}
+                key={labelKey}
                 className="card-glass-border rounded-xl p-5 text-center transition-all hover:shadow-[0_0_12px_var(--color-glow)]"
               >
-                <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
-                  {t(valueKey)}
+                <div className="text-sm md:text-3xl font-bold text-accent mb-1">
+                  {counts[i].toLocaleString()}{suffix}
                 </div>
                 <div className="text-subtle text-xs md:text-sm leading-tight">
                   {t(labelKey)}
@@ -55,7 +92,7 @@ export default function About() {
         {/* Decorative accent line */}
         <div className="mt-16 flex items-center gap-4">
           <div className="h-px flex-1 bg-boundary" />
-          <span className="text-accent text-xl">✦</span>
+          <span className="text-glow text-xl">✦</span>
           <div className="h-px flex-1 bg-boundary" />
         </div>
       </div>

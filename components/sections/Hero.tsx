@@ -20,7 +20,31 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen">
       <HeroCarousel>
-        <div className="flex flex-col items-center justify-center px-4 pt-16 pb-16">
+        {/* Drone wireframe decorations — inside carousel so overflow-hidden clips them; hidden on mobile */}
+        <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-100 lg:w-200 pointer-events-none select-none -translate-x-1/2">
+          <div style={{ animation: 'drone-left-in 0.8s ease-out both' }}>
+            <Image
+              src={withBasePath('/drone-wireframe.svg')}
+              alt=""
+              width={400}
+              height={321}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-100 lg:w-200 pointer-events-none select-none translate-x-1/2 scale-x-[-1]">
+          <div style={{ animation: 'drone-right-in 0.8s 0.15s ease-out both' }}>
+            <Image
+              src={withBasePath('/drone-wireframe.svg')}
+              alt=""
+              width={400}
+              height={321}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center px-4 pt-16 md:pt-46 lg:pt-16 pb-16">
           <div className="flex sm:flex-row items-center justify-center md:gap-2 my-4 md:my-8">
             {/* Main organiser */}
             {mainOrgs.map(org => (
@@ -110,6 +134,16 @@ export default function Hero() {
                   )}
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Scroll indicator — tablet only (drones fill space on desktop) */}
+          <div className="hidden md:flex lg:hidden flex-col items-center mt-10 gap-1.5">
+            <span className="text-subtle text-[10px] tracking-[0.2em] uppercase">{t('scroll')}</span>
+            <div style={{ animation: 'scroll-bounce 1.6s ease-in-out infinite' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-subtle opacity-50">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
           </div>
         </div>

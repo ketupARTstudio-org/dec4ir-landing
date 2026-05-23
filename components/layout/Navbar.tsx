@@ -18,11 +18,14 @@ const NAV_LINKS = [
   { key: 'contact',    href: '#contact' },
 ] as const
 
+const SECTION_IDS = ['hero', 'about', 'activities', 'schedule', 'categories', 'organizers', 'merch', 'faq', 'contact']
+
 export default function Navbar() {
   const t = useTranslations('nav')
   const { locale, setLocale } = useLocale()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -30,8 +33,32 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const navLinkClass =
-    'text-secondary hover:text-primary text-sm transition-colors duration-200'
+  useEffect(() => {
+    const visible = new Set<string>()
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) visible.add(e.target.id)
+          else visible.delete(e.target.id)
+        })
+        const active = SECTION_IDS.find(id => visible.has(id))
+        setActiveSection(active ?? '')
+      },
+      { rootMargin: '0px 0px -70% 0px' },
+    )
+    SECTION_IDS.forEach(id => {
+      const el = document.getElementById(id)
+      if (el) obs.observe(el)
+    })
+    return () => obs.disconnect()
+  }, [])
+
+  const navLinkClass = (key: string) =>
+    `text-sm transition-colors duration-200 ${
+      activeSection === key
+        ? 'nav-active'
+        : 'text-secondary hover:text-primary'
+    }`
 
   return (
     <nav
@@ -57,7 +84,7 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6 flex-1 justify-center">
           {NAV_LINKS.map(({ key, href }) => (
-            <a key={key} href={href} className={navLinkClass}>
+            <a key={key} href={href} className={navLinkClass(key)}>
               {t(key)}
             </a>
           ))}
@@ -121,7 +148,7 @@ export default function Navbar() {
               key={key}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="text-secondary hover:text-primary py-3 px-2 text-sm border-b border-boundary/50 transition-colors"
+              className={`py-3 px-2 border-b border-boundary/50 ${navLinkClass(key)}`}
             >
               {t(key)}
             </a>
