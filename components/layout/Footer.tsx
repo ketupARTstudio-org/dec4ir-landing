@@ -40,7 +40,7 @@ export default function Footer() {
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-1 bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 transition-colors w-fit"
+              className="inline-block mt-1 bg-accent text-base font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 transition-all w-fit hover:shadow-[0_0_14px_var(--color-glow)]"
             >
               {tn('register')}
             </a>

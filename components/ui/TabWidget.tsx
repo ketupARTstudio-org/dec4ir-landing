@@ -31,7 +31,7 @@ export default function TabWidget({ items }: TabWidgetProps) {
               onClick={() => setActiveId(item.id)}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left shrink-0 lg:shrink transition-all duration-200 ${
                 isActive
-                  ? 'bg-accent/10 border-l-2 border-accent text-accent'
+                  ? 'bg-glow/10 border-l-2 border-glow text-glow'
                   : 'text-secondary hover:text-primary hover:bg-elevated border-l-2 border-transparent'
               }`}
             >
@@ -45,7 +45,7 @@ export default function TabWidget({ items }: TabWidgetProps) {
       </div>
 
       {/* Content panel */}
-      <div className="lg:col-span-8 bg-elevated border border-boundary rounded-xl p-8 min-h-52 flex flex-col gap-5">
+      <div className="lg:col-span-8 card-glass-border rounded-xl p-8 min-h-52 flex flex-col gap-5">
         {active && (
           <>
             {active.mediaPath && active.mediaType === 'video' && (

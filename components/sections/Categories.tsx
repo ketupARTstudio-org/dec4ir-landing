@@ -7,7 +7,17 @@ export default function Categories() {
   const t = useTranslations('categories')
 
   return (
-    <section id="categories" className="bg-surface py-24 px-4 md:px-8">
+    <section
+      id="categories"
+      className="py-24 px-4 md:px-8"
+      style={{
+        background: [
+          'radial-gradient(ellipse 80% 60% at 20% 60%, #003a5a 0%, #050f1e 65%)',
+          'radial-gradient(ellipse 50% 40% at 80% 20%, #00d4ff12 0%, transparent 60%)',
+          'var(--color-base)',
+        ].join(', '),
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t('title')}</h2>
@@ -25,10 +35,7 @@ export default function Categories() {
                 const nameKey = `cats.${cat.id}.name` as Parameters<typeof t>[0]
                 const gradesKey = `cats.${cat.id}.grades` as Parameters<typeof t>[0]
                 return (
-                  <div
-                    key={cat.id}
-                    className={`bg-elevated border-l-4 ${cat.accentClass} rounded-r-xl p-4 flex items-center justify-between hover:bg-elevated/80 transition-colors`}
-                  >
+                  <div key={cat.id} className="card-glass-border rounded-xl p-4 flex items-center justify-between transition-all hover:shadow-[0_0_12px_var(--color-glow)]">
                     <span className="font-medium text-primary text-sm">{t(nameKey)}</span>
                     <span className="text-subtle text-xs border border-boundary rounded-full px-3 py-1">
                       {t(gradesKey)}
@@ -49,10 +56,7 @@ export default function Categories() {
                 const nameKey = `certs.${cert.id}.name` as Parameters<typeof t>[0]
                 const descKey = `certs.${cert.id}.desc` as Parameters<typeof t>[0]
                 return (
-                  <div
-                    key={cert.id}
-                    className="bg-elevated border border-boundary rounded-xl p-4 flex gap-4 items-start hover:border-accent/30 transition-colors"
-                  >
+                  <div key={cert.id} className="card-glass-border rounded-xl p-4 flex gap-4 items-start transition-all hover:shadow-[0_0_12px_var(--color-glow)]">
                     <span className="text-2xl shrink-0 mt-0.5">{cert.icon}</span>
                     <div>
                       <p className="font-semibold text-primary text-sm mb-1">{t(nameKey)}</p>

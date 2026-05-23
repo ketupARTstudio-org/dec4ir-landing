@@ -11,7 +11,17 @@ export default function FAQSection() {
   const items = FAQ[locale]
 
   return (
-    <section id="faq" className="bg-base py-24 px-4 md:px-8">
+    <section
+      id="faq"
+      className="py-24 px-4 md:px-8"
+      style={{
+        background: [
+          'radial-gradient(ellipse 70% 60% at 75% 55%, #2a0050 0%, #050f1e 65%)',
+          'radial-gradient(ellipse 50% 40% at 15% 30%, #7c3aed12 0%, transparent 60%)',
+          'var(--color-base)',
+        ].join(', '),
+      }}
+    >
       <div className="max-w-3xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t('title')}</h2>

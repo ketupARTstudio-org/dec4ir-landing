@@ -26,7 +26,17 @@ export default function Contact() {
   const t = useTranslations('contact')
 
   return (
-    <section id="contact" className="bg-surface py-24 px-4 md:px-8">
+    <section
+      id="contact"
+      className="py-24 px-4 md:px-8"
+      style={{
+        background: [
+          'radial-gradient(ellipse 80% 60% at 50% 30%, #00203a 0%, #050f1e 65%)',
+          'radial-gradient(ellipse 40% 40% at 70% 70%, #00d4ff0e 0%, transparent 60%)',
+          'var(--color-base)',
+        ].join(', '),
+      }}
+    >
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t('title')}</h2>
         <p className="text-secondary mb-12">{t('subtitle')}</p>
@@ -38,7 +48,7 @@ export default function Contact() {
               href={ch.href}
               target={ch.external ? '_blank' : undefined}
               rel={ch.external ? 'noopener noreferrer' : undefined}
-              className="bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:bg-elevated/80 hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200 group"
+              className="group card-glass-border rounded-xl p-6 flex flex-col items-center gap-3 transition-all duration-200"
             >
               <span className="text-3xl">{ch.icon}</span>
               <div>
@@ -54,7 +64,7 @@ export default function Contact() {
         </div>
 
         {/* Address */}
-        <div className="group bg-elevated border border-boundary rounded-xl p-6 flex flex-col items-center gap-3 hover:bg-elevated/80 hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200">
+        <div className="group card-glass-border rounded-xl p-6 flex flex-col items-center gap-3 transition-all duration-200">
           <span className="text-3xl">📍</span>
           <div>
             <p className="text-secondary text-xs font-semibold tracking-widest uppercase mb-1">

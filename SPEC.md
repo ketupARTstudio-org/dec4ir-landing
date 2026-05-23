@@ -206,23 +206,86 @@ BM translations of all FAQ content required.
 Futuristic / tech-forward. References: aerospace HUDs, drone tech interfaces, educational innovation.
 
 ### 6.2 Color Palette
-- **Background:** Deep dark (near-black, e.g. `#1e1e1e`)
-- **Primary accent:** Electric cyan / neon maroon (e.g. `#800f3d`)
-- **Secondary accent:** Gold/yellow (e.g. `#e69125`, `ffc107`)
-- **Text primary:** White (`#fff`)
-- **Text secondary:** Light yellow (`#f8f2dc`)
-- **Card backgrounds:** Slightly lighter dark (`#0d1a2b` or similar)
-- **Border/glow:** Accent color at reduced opacity
 
-All colors stored as CSS custom properties in `app/globals.css` for easy theming.
+CSS custom properties defined in `app/globals.css`:
 
-### 6.3 Typography
+| Token | Value | Usage |
+|---|---|---|
+| `--color-base` | `#1e1e1e` | Page background (`body`) |
+| `--color-surface` | `#141414` | Darker sections, footer |
+| `--color-elevated` | `#262626` | Solid card/panel background (Organizers, non-glass areas) |
+| `--color-glass` | `rgba(38,38,38,0.45)` | Glass card/panel background (**new token**) |
+| `--color-boundary` | `#3a3a3a` | Default borders |
+| `--color-accent` | `#800f3d` | Primary accent (maroon) |
+| `--color-glow` | `#e69125` | Secondary accent / glow (gold) |
+| `--color-primary` | `#ffffff` | Primary text |
+| `--color-secondary` | `#f8f2dc` | Secondary text (warm white) |
+| `--color-subtle` | `#9e8a80` | Muted/helper text |
+
+### 6.3 Card & Panel Style
+
+#### 6.3.1 Affected sections
+Cards and panels in the following sections use the **glass + gradient-border** treatment:
+**About, Tournament Activities, Categories & Certificates, Merchandise, FAQ, Contact**
+
+The **Organizers** section retains its existing plain bordered card style — no gradient border, no glass.
+
+#### 6.3.2 Glass background
+- Token: `bg-glass` (`--color-glass`: `rgba(38,38,38,0.45)`)
+- Backdrop blur: ~8px (`backdrop-blur-sm`) — subtle, not heavy
+- Replaces `bg-elevated` on affected cards/panels
+- Works on top of the section's radial gradient or solid background
+
+#### 6.3.3 Gradient border
+- Direction: left → right
+- Colors: `#e69125` (gold, left) → `#800f3d` (maroon, right)
+- Thickness: ~1px (same as current `border-boundary`)
+- Implementation: wrapper pseudo-element (`::before` or CSS `background-clip: padding-box` + outer `background: linear-gradient(...)`) — **not** CSS `border-image` (breaks border-radius)
+- On hover: border brightens / glow shadow bleeds through using `--color-glow` at reduced opacity
+
+### 6.4 Section Background Strategy
+
+| Section | Background |
+|---|---|
+| Hero | Carousel (video / image / gradient) — unchanged |
+| About | Radial gradient (dark navy/teal) |
+| Tournament Activities | Radial gradient (dark purple/navy) |
+| Event Schedule | Solid `bg-base` |
+| Categories & Certificates | Radial gradient (dark navy/teal) |
+| Organizers | Solid `bg-surface` |
+| Merchandise | Solid `bg-base` |
+| FAQ | Radial gradient (dark purple/navy) |
+| Contact | Radial gradient (dark neutral) |
+| Footer | Solid `bg-surface` (fully dark, no gradient) |
+
+**Radial gradient style** (reference: `PLACEHOLDER_SLIDES` in `components/ui/HeroCarousel.tsx`):
+- Composed from two elliptical radial gradients for depth and atmosphere
+- Color palette: deep navy/teal (`#003a5a`), deep purple (`#2a0050`), dark mid-blue (`#00203a`), accent halos (`#00d4ff12`, `#7c3aed12`) — always fading to near-black (`#050f1e` / `--color-base`)
+- Gradients must remain dark enough for text legibility without a separate scrim overlay
+- Alternate between two "flavors" to avoid monotony:
+  - **Teal flavor** (About, Categories): warm side toward teal/navy
+  - **Purple flavor** (Tournament, FAQ, Contact): warm side toward purple/indigo
+
+### 6.5 Hero → About Section Transition
+
+The bottom of the Hero section fades seamlessly into the About section's radial gradient background:
+- Absolute-positioned gradient overlay at the bottom of the Hero: ~`h-24` to `h-32`
+- Gradient: `from-transparent` → About section's background color (the dark base of its radial gradient)
+- Goal: eliminate the hard visible edge between Hero and About; the page should feel like one continuous surface
+
+### 6.6 Footer
+
+- Background: `bg-surface` (`#141414`) — fully dark, no radial gradient
+- Sits directly below the Contact section (which has a radial gradient)
+- No gradient border — plain dark panel consistent with the overall footer role
+
+### 6.7 Typography
 - **Primary font:** Inter
 - **Title font:** Squada One
 - **Mono/code elements:** Geist Mono
 - **Scale:** Tailwind default type scale
 
-### 6.4 Animations
+### 6.8 Animations
 - Hover effects on interactive elements (buttons, cards, sponsor logos, nav links)
 - Smooth CSS transitions (200–300ms ease)
 - Hero carousel cross-fade
@@ -230,10 +293,10 @@ All colors stored as CSS custom properties in `app/globals.css` for easy theming
 - **No scroll-triggered animations** (performance + accessibility)
 - **No parallax or particle effects**
 
-### 6.5 Responsive Breakpoints
+### 6.9 Responsive Breakpoints
 Mobile-first. Tailwind defaults: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px.
 
-### 6.6 Scroll-to-Top Button
+### 6.10 Scroll-to-Top Button
 - Locate at bottom right, absolute position.
 - Only appear after the user scrolls down a certain amount.
 - Circle shape with primary accent border, with an up icon in text secondary.

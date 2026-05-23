@@ -116,7 +116,7 @@ export default function Hero() {
       </HeroCarousel>
 
       {/* Bottom gradient fade into next section */}
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-base pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-[#050f1e] pointer-events-none" />
     </section>
   )
 }

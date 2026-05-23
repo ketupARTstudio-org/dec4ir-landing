@@ -77,7 +77,7 @@ export default function Navbar() {
             href={REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)"
+            className="bg-accent text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-glow/85 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
           >
             {t('register')}
           </a>

@@ -9,7 +9,7 @@ export default function Merchandise() {
   const t = useTranslations('merch')
 
   return (
-    <section id="merch" className="bg-surface py-24 px-4 md:px-8">
+    <section id="merch" className="bg-base py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
@@ -28,12 +28,9 @@ export default function Merchandise() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {MERCH_ITEMS.map(item => (
-            <div
-              key={item.id}
-              className="group bg-elevated border border-boundary rounded-xl overflow-hidden hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200 hover:-translate-y-1"
-            >
+            <div key={item.id} className="group card-glass-border rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-200">
               {/* Image / placeholder */}
-              <div className={`relative aspect-square bg-gradient-to-br ${item.gradient}`}>
+              <div className={`relative aspect-square bg-linear-to-br ${item.gradient}`}>
                 {item.image ? (
                   <Image src={withBasePath(item.image)} alt={item.name} fill className="object-cover" />
                 ) : (

@@ -84,7 +84,7 @@ export default function HeroCarousel({
       ))}
 
       {/* Dark scrim for text legibility */}
-      <div className="absolute inset-0 bg-base/55 backdrop-blur-[1px]" />
+      {/* <div className="absolute inset-0 bg-base/55 backdrop-blur-[1px]" /> */}
 
       {/* Slide indicator dots */}
       {/* 
