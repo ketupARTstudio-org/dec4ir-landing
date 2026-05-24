@@ -37,7 +37,7 @@ All content lives in TypeScript data files (`/data/*.ts`) and next-intl translat
 ### 3.3 Next.js standalone output
 `next.config.ts` sets `output: 'standalone'` for a minimal Docker image.
 
-### 3.4 Docker stack
+### 3.4 Docker stack (optional)
 - `Dockerfile`: multi-stage build (deps → builder → runner using standalone output)
 - `docker-compose.yml`: two services — `app` (Next.js, internal port 3000) + `nginx` (port 80)
 - `nginx.conf`: reverse proxy to `app:3000`
@@ -81,10 +81,11 @@ Single scrollable landing page (`/`). Navigation anchors link to each section. N
   - Smooth cross-fade transition between carousel items
   - Dark overlay on media for text readability
 - **Content overlay (centered):**
+  - Organizers' logos row (top of hero)
   - Wordmark: 7th Drone Edu Challenge IR 4.0 2026 (DEC4IR 2026)
   - Tagline (Science Technology, Engineering, and Mathematics (STEM) Education; National Online Tournament; Prestigious National Certificate) (bilingual via i18n)
-  - Organizers' logos row (bottom of hero)
-  - Primary CTA: "Register Now" → external registration URL (https://dec4ir.org/portal)
+  - Collaborators' logos row (bottom of hero)
+  - Primary CTA: "Register Now" → external registration URL (https://dec4ir.org)
 - **No countdown timer**
 
 ### 5.3 About DEC4IR
@@ -157,7 +158,7 @@ Logo grid.
 
 **Placeholder tier structure:**
 - **Main Organizers** — 2 slots, large logo, prominent placement: Universiti Teknologi Malaysia (UTM), Ministry of Education Malaysia
-- **Strategic Partners** — up to 4 slots, medium logos: Sport Innovation & Technology Center (SITC), iHumEn (Institute of Human Centered Engineering), Dronecraft Solutions, KetupART Studio
+- **Collaborators** — up to 4 slots, medium logos: Sport Innovation & Technology Center (SITC), iHumEn (Institute of Human Centered Engineering), Dronecraft Solutions, KetupART Studio
 
 Each logo: hover effect (slight glow/scale), clickable link to organizers' website. Placeholder grey boxes with tier label if logo not yet provided.
 
@@ -230,11 +231,9 @@ Cards and panels in the following sections use the **glass + gradient-border** t
 
 The **Organizers** section retains its existing plain bordered card style — no gradient border, no glass.
 
-#### 6.3.2 Glass background
-- Token: `bg-glass` (`--color-glass`: `rgba(38,38,38,0.45)`)
-- Backdrop blur: ~8px (`backdrop-blur-sm`) — subtle, not heavy
-- Replaces `bg-elevated` on affected cards/panels
-- Works on top of the section's radial gradient or solid background
+#### 6.3.2 Card with gradient border
+- Token: `card-glass-border`
+- Note: Due to background-clip and require rounded corner, the card does not have glassy blur effect (use full opaque background).
 
 #### 6.3.3 Gradient border
 - Direction: left → right
@@ -252,11 +251,11 @@ The **Organizers** section retains its existing plain bordered card style — no
 | Tournament Activities | Radial gradient (dark purple/navy) |
 | Event Schedule | Solid `bg-base` |
 | Categories & Certificates | Radial gradient (dark navy/teal) |
-| Organizers | Solid `bg-surface` |
+| Organizers | Solid `bg-base` |
 | Merchandise | Solid `bg-base` |
 | FAQ | Radial gradient (dark purple/navy) |
 | Contact | Radial gradient (dark neutral) |
-| Footer | Solid `bg-surface` (fully dark, no gradient) |
+| Footer | Solid `bg-base` (fully dark, no gradient) |
 
 **Radial gradient style** (reference: `PLACEHOLDER_SLIDES` in `components/ui/HeroCarousel.tsx`):
 - Composed from two elliptical radial gradients for depth and atmosphere
@@ -275,7 +274,7 @@ The bottom of the Hero section fades seamlessly into the About section's radial 
 
 ### 6.6 Footer
 
-- Background: `bg-surface` (`#141414`) — fully dark, no radial gradient
+- Background: `bg-base` — fully dark, no radial gradient
 - Sits directly below the Contact section (which has a radial gradient)
 - No gradient border — plain dark panel consistent with the overall footer role
 
