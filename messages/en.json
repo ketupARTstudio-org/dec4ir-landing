@@ -39,17 +39,29 @@
     "subtitle": "Everything you need to learn, compete, and grow"
   },
   "features": {
+    "comingSoon": "Coming Soon",
     "mobileApp": {
       "title": "Drone Control Mobile App",
-      "description": "Participants learn the basic drone input via mobile."
+      "description": "Participants learn the basic drone input via mobile.",
+      "links": {
+        "googlePlay": "Google Play",
+        "appStore": "App Store"
+      }
     },
     "vrTraining": {
       "title": "VR Training",
-      "description": "Immersive virtual reality drone training environment."
+      "description": "Immersive virtual reality drone training environment.",
+      "links": {
+        "itchio": "itch.io",
+        "sidequest": "SideQuest"
+      }
     },
     "codeBlock": {
       "title": "Code Block Flight Simulation",
-      "description": "Visual programming to control drone flight paths."
+      "description": "Visual programming to control drone flight paths.",
+      "links": {
+        "youtube": "Watch on YouTube"
+      }
     },
     "workbook": {
       "title": "Drone Block Coding 101 Workbook",
@@ -57,15 +69,25 @@
     },
     "videoLearning": {
       "title": "Video Learning",
-      "description": "Structured video curriculum for competition preparation."
+      "description": "Structured video curriculum for competition preparation.",
+      "links": {
+        "secondary": "Secondary School",
+        "primary": "Primary School"
+      }
     },
     "quizPlatform": {
       "title": "Quiz Platform",
-      "description": "Online quiz system for trial and screening — test your drone knowledge."
+      "description": "Online quiz system for trial and screening — test your drone knowledge.",
+      "links": {
+        "quizizz": "Quizizz"
+      }
     },
     "assignment": {
       "title": "Final Assignment",
-      "description": "Shortlisted students complete a final assignment covering soft skills, hard skills, and hands-on drone structure practice."
+      "description": "Shortlisted students complete a final assignment covering soft skills, hard skills, and hands-on drone structure practice.",
+      "links": {
+        "portal": "To Be Announced"
+      }
     },
     "certificate": {
       "title": "MOE Certified Certificate",
@@ -79,19 +101,27 @@
       "regOpen": "Registration Opens & Learning Materials Available",
       "regClose": "Registration Closes",
       "trialQuiz": "Trial Quiz",
-      "screeningQuiz": "Screening Quiz",
+      "screeningQuiz1": "Screening Quiz (Day 1)",
+      "screeningQuiz2": "Screening Quiz (Day 2)",
+      "screeningQuiz3": "Screening Quiz (Day 3)",
+      "screeningQuiz4": "Screening Quiz (Day 4)",
       "shortlist": "Shortlist Announcement & Final Assignment Released",
-      "finalDeadline": "Final Assignment Submission Deadline",
-      "results": "Results Announcement"
+      "finalistBriefing": "Finalist Briefing",
+      "finalAssignmentDeadline": "Final Assignment Submission Deadline",
+      "finalResults": "Results Announcement"
     },
     "phaseDesc": {
       "regOpen": "Register now and access all learning materials on the portal.",
       "regClose": "Last day to register for DEC4IR 2026.",
       "trialQuiz": "Dummy questions, no scoring. Familiarise yourself with the quiz platform before the real deal.",
-      "screeningQuiz": "Timed, scored quiz. Best individual per state per category advances to the final.",
-      "shortlist": "Shortlisted participants announced. Final assignment released.",
-      "finalDeadline": "Submit your final assignment before this deadline.",
-      "results": "Winners announced per category. Certificate issuance begins."
+      "screeningQuiz1": "Timed, scored quiz. Best individual per state per category advances to the final.",
+      "screeningQuiz2": "Timed, scored quiz. Best individual per state per category advances to the final.",
+      "screeningQuiz3": "Timed, scored quiz. Best individual per state per category advances to the final.",
+      "screeningQuiz4": "Timed, scored quiz. Best individual per state per category advances to the final.",
+      "shortlist": "Shortlisted participants announced.",
+      "finalistBriefing": "Final assignment released and briefing of assignment for finalists.",
+      "finalAssignmentDeadline": "Submit your final assignment before this deadline.",
+      "finalResults": "Winners announced per category. Certificate issuance begins."
     }
   },
   "categories": {

@@ -2,10 +2,14 @@ export type PhaseId =
   | 'regOpen'
   | 'regClose'
   | 'trialQuiz'
-  | 'screeningQuiz'
+  | 'screeningQuiz1'
+  | 'screeningQuiz2'
+  | 'screeningQuiz3'
+  | 'screeningQuiz4'
   | 'shortlist'
-  | 'finalDeadline'
-  | 'results'
+  | 'finalistBriefing'
+  | 'finalAssignmentDeadline'
+  | 'finalResults'
 
 export interface Phase {
   id: PhaseId
@@ -13,16 +17,25 @@ export interface Phase {
 }
 
 export const PHASES: Phase[] = [
-  { id: 'regOpen',       isoDate: '2026-05-13' },
-  { id: 'regClose',      isoDate: '2026-06-30' },
+  { id: 'regOpen', isoDate: '2026-05-13' },
+  { id: 'regClose', isoDate: '2026-06-30' },
+  { id: 'trialQuiz', isoDate: '2026-07-08' },
+  { id: 'screeningQuiz1', isoDate: '2026-07-13' },
+  { id: 'screeningQuiz2', isoDate: '2026-07-14' },
+  { id: 'screeningQuiz3', isoDate: '2026-07-15' },
+  { id: 'screeningQuiz4', isoDate: '2026-07-16' },
+  { id: 'shortlist', isoDate: '2026-07-23' },
+  { id: 'finalistBriefing', isoDate: '2026-07-23' },
+  { id: 'finalAssignmentDeadline', isoDate: '2026-08-08' },
+  { id: 'finalResults', isoDate: '2026-09-01' },
 ]
 
 const HIDDEN_PHASES: Phase[] = [
-  { id: 'trialQuiz',     isoDate: '2026-06-19' },
-  { id: 'screeningQuiz', isoDate: '2026-06-30' },
-  { id: 'shortlist',     isoDate: '2026-07-07' },
-  { id: 'finalDeadline', isoDate: '2026-08-08' },
-  { id: 'results',       isoDate: '2026-08-30' },
+  { id: 'trialQuiz', isoDate: '2026-06-19' },
+  { id: 'screeningQuiz1', isoDate: '2026-06-30' },
+  { id: 'shortlist', isoDate: '2026-07-07' },
+  { id: 'finalAssignmentDeadline', isoDate: '2026-08-08' },
+  { id: 'finalResults', isoDate: '2026-08-30' },
 ]
 
 export function getPhaseStatus(isoDate: string): 'past' | 'current' | 'future' {

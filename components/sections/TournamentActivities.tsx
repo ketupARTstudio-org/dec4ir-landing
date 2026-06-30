@@ -34,6 +34,10 @@ export default function TournamentActivities() {
     description: tf(`${f.id}.description`),
     mediaPath: f.mediaPath,
     mediaType: f.mediaType,
+    links: f.links.map(l => ({
+      label: tf(`${f.id}.links.${l.key}`),
+      url: l.url,
+    })),
   }))
 
   return (
@@ -61,7 +65,7 @@ export default function TournamentActivities() {
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
           }}
         >
-          <TabWidget items={items} />
+          <TabWidget items={items} comingSoonLabel={tf('comingSoon')} />
         </div>
       </div>
     </section>

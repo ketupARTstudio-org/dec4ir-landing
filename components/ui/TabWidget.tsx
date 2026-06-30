@@ -2,6 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+export interface TabLink {
+  label: string
+  url: string | null // null = TBA
+}
+
 export interface TabItem {
   id: string
   icon: string
@@ -9,13 +14,15 @@ export interface TabItem {
   description: string
   mediaPath?: string
   mediaType?: 'image' | 'video'
+  links?: TabLink[]
 }
 
 interface TabWidgetProps {
   items: TabItem[]
+  comingSoonLabel?: string
 }
 
-export default function TabWidget({ items }: TabWidgetProps) {
+export default function TabWidget({ items, comingSoonLabel = 'Coming Soon' }: TabWidgetProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? '')
   const [contentVisible, setContentVisible] = useState(true)
   const pendingIdRef = useRef<string | null>(null)
@@ -97,6 +104,32 @@ export default function TabWidget({ items }: TabWidgetProps) {
             <div className="text-5xl leading-none">{active.icon}</div>
             <h3 className="text-xl text-primary">{active.title}</h3>
             <p className="text-secondary leading-relaxed">{active.description}</p>
+            {active.links && active.links.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-1">
+                {active.links.map((link, i) =>
+                  link.url !== null ? (
+                    <div key={i}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 bg-accent text-white font-semibold text-sm text-center px-5 py-2.5 rounded-lg hover:bg-glow  hover:text-base hover:border-glow/50 hover:shadow-[0_0_12px_var(--color-glow)] transition-all duration-200"
+                      >
+                        ↗ {link.label}
+                      </a>
+                    </div>
+                  ) : (
+                    <div
+                      key={i}
+                      className="flex items-center gap-1.5 rounded-md border border-(--color-boundary) px-4 py-2 text-sm text-(--color-subtle) opacity-60 cursor-not-allowed"
+                    >
+                      {link.label}
+                      <span className="text-xs">· {comingSoonLabel}</span>
+                    </div>
+                  )
+                )}
+              </div>
+            )}
           </>
         )}
       </div>

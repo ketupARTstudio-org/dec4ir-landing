@@ -39,17 +39,29 @@
     "subtitle": "Semua yang anda perlukan untuk belajar, bertanding, dan berkembang"
   },
   "features": {
+    "comingSoon": "Akan Datang",
     "mobileApp": {
       "title": "Aplikasi Kawalan Dron Mudah Alih",
-      "description": "Peserta mempelajari kawalan asas dron melalui telefon pintar."
+      "description": "Peserta mempelajari kawalan asas dron melalui telefon pintar.",
+      "links": {
+        "googlePlay": "Google Play",
+        "appStore": "App Store"
+      }
     },
     "vrTraining": {
       "title": "Latihan VR",
-      "description": "Persekitaran latihan dron realiti maya yang imersif."
+      "description": "Persekitaran latihan dron realiti maya yang imersif.",
+      "links": {
+        "itchio": "itch.io",
+        "sidequest": "SideQuest"
+      }
     },
     "codeBlock": {
       "title": "Simulasi Penerbangan Blok Kod",
-      "description": "Pengaturcaraan visual untuk mengawal laluan penerbangan dron."
+      "description": "Pengaturcaraan visual untuk mengawal laluan penerbangan dron.",
+      "links": {
+        "youtube": "Tonton di YouTube"
+      }
     },
     "workbook": {
       "title": "Buku Kerja Pengkodan Blok Dron 101",
@@ -57,15 +69,25 @@
     },
     "videoLearning": {
       "title": "Pembelajaran Video",
-      "description": "Kurikulum video berstruktur untuk persediaan pertandingan."
+      "description": "Kurikulum video berstruktur untuk persediaan pertandingan.",
+      "links": {
+        "secondary": "Sekolah Menengah",
+        "primary": "Sekolah Rendah"
+      }
     },
     "quizPlatform": {
       "title": "Platform Kuiz",
-      "description": "Sistem kuiz dalam talian untuk ujian percubaan dan saringan — uji pengetahuan dron anda."
+      "description": "Sistem kuiz dalam talian untuk ujian percubaan dan saringan — uji pengetahuan dron anda.",
+      "links": {
+        "quizizz": "Quizizz"
+      }
     },
     "assignment": {
       "title": "Tugasan Akhir",
-      "description": "Peserta yang disenarai pendek menyelesaikan tugasan akhir merangkumi kemahiran insaniah, teknikal, dan amali struktur dron."
+      "description": "Peserta yang disenarai pendek menyelesaikan tugasan akhir merangkumi kemahiran insaniah, teknikal, dan amali struktur dron.",
+      "links": {
+        "portal": "Akan Diumumkan"
+      }
     },
     "certificate": {
       "title": "Sijil Bertauliah KPM",
@@ -79,19 +101,27 @@
       "regOpen": "Pendaftaran Dibuka & Bahan Pembelajaran Tersedia",
       "regClose": "Pendaftaran Ditutup",
       "trialQuiz": "Kuiz Percubaan",
-      "screeningQuiz": "Kuiz Saringan",
+      "screeningQuiz1": "Kuiz Saringan (Hari Pertama)",
+      "screeningQuiz2": "Kuiz Saringan (Hari Kedua)",
+      "screeningQuiz3": "Kuiz Saringan (Hari Ketiga)",
+      "screeningQuiz4": "Kuiz Saringan (Hari Keempat)",
       "shortlist": "Pengumuman Senarai Pendek & Tugasan Akhir Dikeluarkan",
-      "finalDeadline": "Tarikh Akhir Hantar Tugasan Akhir",
-      "results": "Pengumuman Keputusan"
+      "finalistBriefing": "Taklimat Tugasan Akhir",
+      "finalAssignmentDeadline": "Tarikh Akhir Hantar Tugasan Akhir",
+      "finalResults": "Pengumuman Keputusan"
     },
     "phaseDesc": {
       "regOpen": "Daftar sekarang dan akses semua bahan pembelajaran di portal.",
       "regClose": "Hari terakhir untuk mendaftar DEC4IR 2026.",
       "trialQuiz": "Soalan dummy, tiada markah. Biasakan diri dengan platform kuiz sebelum yang sebenar.",
-      "screeningQuiz": "Kuiz berjangka masa dan berskor. Individu terbaik per negeri per kategori maju ke peringkat akhir.",
-      "shortlist": "Peserta yang disenarai pendek diumumkan. Tugasan akhir dikeluarkan.",
-      "finalDeadline": "Hantar tugasan akhir anda sebelum tarikh ini.",
-      "results": "Pemenang diumumkan mengikut kategori. Pengeluaran sijil bermula."
+      "screeningQuiz1": "Kuiz berjangka masa dan berskor. Individu terbaik per negeri per kategori maju ke peringkat akhir.",
+      "screeningQuiz2": "Kuiz berjangka masa dan berskor. Individu terbaik per negeri per kategori maju ke peringkat akhir.",
+      "screeningQuiz3": "Kuiz berjangka masa dan berskor. Individu terbaik per negeri per kategori maju ke peringkat akhir.",
+      "screeningQuiz4": "Kuiz berjangka masa dan berskor. Individu terbaik per negeri per kategori maju ke peringkat akhir.",
+      "shortlist": "Peserta yang disenarai pendek diumumkan.",
+      "finalistBriefing": "Tugasan akhir dikeluarkan berserta taklimat tugasan.",
+      "finalAssignmentDeadline": "Hantar tugasan akhir anda sebelum tarikh ini.",
+      "finalResults": "Pemenang diumumkan mengikut kategori. Pengeluaran sijil bermula."
     }
   },
   "categories": {

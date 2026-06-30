@@ -98,16 +98,16 @@ Single scrollable landing page (`/`). Navigation anchors link to each section. N
 ### 5.4 Platform Features ("How It Works")
 Six feature cards showing what participants use to learn and compete:
 
-| Feature | Description | Image/Video |
-|---|---|---|
-| Drone Control Mobile App | Participants learn the basic drone input via mobile. | public/media/features/gofly-mobile.jpeg |
-| VR Training | Immersive virtual reality drone training environment. | public/media/features/gofly.mp4 |
-| Code Block Flight Simulation | Visual programming to control drone flight paths. | public/media/features/droneblock.mp4 |
-| Drone Block Coding 101 Workbook | Introduces students to the fundamentals of STEM-based drone programming. Using visual block coding, learners explore essential programming concepts such as sequencing, loops, and conditional logic while applying them to real-world drone flight missions. Each lesson is designed to gradually build coding proficiency, problem-solving skills, and creativity as students program drones to perform tasks like take-off, navigation, obstacle avoidance, and landing. This workbook not only fosters computational thinking but also inspires innovation, teamwork, and curiosity in STEM education. | public/media/features/droneblockcodingworkbook.jpg |
-| Video Learning | Structured video curriculum for competition preparation. | public/media/features/elearning2.mp4 |
-| Quiz Platform | Online quiz system used for trial, screening to test the student how far they gain the drone`s knowledge. | public/media/features/kuiz.mp4 |
-| Assignment | Shortlisted students will be continue to final assignment to improve soft and hard skills, hands-on practice on drone structure  | public/media/features/teamwork.mp4 |
-| MOE Certified Certificate | Ministry of Education Malaysia recognised certificate. | public/media/features/certificate.png |
+| Feature | Description | Image/Video | Link/Button |
+|---|---|---|---|
+| Drone Control Mobile App | Participants learn the basic drone input via mobile. | public/media/features/gofly-mobile.jpeg | Google Play: https://play.google.com/store/apps/details?id=com.KetupARTStudio.GoFlyApp&hl=en-US ; Apple Store: https://apps.apple.com/us/app/gofly-app-input-practice/id6779450642 |
+| VR Training | Immersive virtual reality drone training environment. | public/media/features/gofly.mp4 | itch.io: https://ketupartstudio.itch.io/gofly-vr-lite ; SideQuest: https://sidequestvr.com/app/41261/gofly-vr-lite |
+| Code Block Flight Simulation | Visual programming to control drone flight paths. | public/media/features/droneblock.mp4 | YouTube: https://www.youtube.com/playlist?list=PLtPszHizzKifHjiDicMhql18wbSE8jGh0 |
+| Drone Block Coding 101 Workbook | Introduces students to the fundamentals of STEM-based drone programming. Using visual block coding, learners explore essential programming concepts such as sequencing, loops, and conditional logic while applying them to real-world drone flight missions. Each lesson is designed to gradually build coding proficiency, problem-solving skills, and creativity as students program drones to perform tasks like take-off, navigation, obstacle avoidance, and landing. This workbook not only fosters computational thinking but also inspires innovation, teamwork, and curiosity in STEM education. | public/media/features/droneblockcodingworkbook.jpg | Nil |
+| Video Learning | Structured video curriculum for competition preparation. | public/media/features/elearning2.mp4 | Secondary School: https://www.youtube.com/playlist?list=PLtPszHizzKifnm0qPlgGmT20Wr6awvsY9 ; Primary School: https://www.youtube.com/playlist?list=PLtPszHizzKie9VuIumzMXoAhQe5Uf5cYo |
+| Quiz Platform | Online quiz system used for trial, screening to test the student how far they gain the drone`s knowledge. | public/media/features/kuiz.mp4 | Quizizz (TBA) |
+| Assignment | Shortlisted students will be continue to final assignment to improve soft and hard skills, hands-on practice on drone structure  | public/media/features/teamwork.mp4 | To be announced |
+| MOE Certified Certificate | Ministry of Education Malaysia recognised certificate. | public/media/features/certificate.png | Nil |
 
 Layout: tab widget, 4:8 (tabs:content) on desktop, single column on mobile (tabs at top, bottom is content). Each content: image/GIF/video + title + 1-line description.
 

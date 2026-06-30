@@ -6,13 +6,17 @@ import { useLocale } from '@/components/providers/LocaleProvider'
 import { PHASES, findNextPhaseIndex } from '@/data/schedule'
 
 const PHASE_ICONS: Record<string, string> = {
-  regOpen:       '📋',
-  regClose:      '🔒',
-  trialQuiz:     '🔧',
-  screeningQuiz: '⚡',
-  shortlist:     '🏆',
-  finalDeadline: '📨',
-  results:       '🎉',
+  regOpen: '📋',
+  regClose: '🔒',
+  trialQuiz: '🔧',
+  screeningQuiz1: '⚡',
+  screeningQuiz2: '⚡',
+  screeningQuiz3: '⚡',
+  screeningQuiz4: '⚡',
+  shortlist: '🏆',
+  finalistBriefing: '🔊',
+  finalAssignmentDeadline: '📨',
+  finalResults: '🎉',
 }
 
 export default function EventSchedule() {
