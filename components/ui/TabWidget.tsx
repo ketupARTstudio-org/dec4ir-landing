@@ -90,7 +90,7 @@ export default function TabWidget({ items, comingSoonLabel = 'Coming Soon' }: Ta
                 muted
                 loop
                 playsInline
-                className="w-full max-h-56 rounded-lg object-cover"
+                className="w-full max-h-100 rounded-lg object-cover"
               />
             )}
             {active.mediaPath && active.mediaType === 'image' && (
@@ -98,7 +98,7 @@ export default function TabWidget({ items, comingSoonLabel = 'Coming Soon' }: Ta
               <img
                 src={active.mediaPath}
                 alt={active.title}
-                className="w-full max-h-56 rounded-lg object-cover"
+                className="w-full max-h-80 rounded-lg object-cover"
               />
             )}
             <div className="text-5xl leading-none">{active.icon}</div>
