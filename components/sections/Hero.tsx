@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import HeroCarousel from '@/components/ui/HeroCarousel'
 import { ORGANIZERS } from '@/data/organizers'
 import { REGISTRATION_URL } from '@/data/contact'
+import { RESULTS_ANNOUNCED } from '@/data/results'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import Image from 'next/image'
 import { withBasePath } from '@/lib/site'
@@ -97,15 +98,24 @@ export default function Hero() {
           {/* Event period */}
           <p className="text-subtle text-sm mb-8">{t('eventPeriod')}</p>
 
-          {/* CTA */}
-          <a
-            href={REGISTRATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent text-white font-bold px-8 py-3.5 rounded-xl text-lg hover:bg-glow/85 hover:scale-105 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
-          >
-            {t('cta')}
-          </a>
+          {/* CTA — "See Results" once results are out, otherwise "Register Now" */}
+          {RESULTS_ANNOUNCED ? (
+            <a
+              href="#results"
+              className="bg-accent text-white font-bold px-8 py-3.5 rounded-xl text-lg hover:bg-glow/85 hover:scale-105 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
+            >
+              {t('seeResults')}
+            </a>
+          ) : (
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-accent text-white font-bold px-8 py-3.5 rounded-xl text-lg hover:bg-glow/85 hover:scale-105 hover:text-base transition-all duration-200 ease-in-out hover:shadow-[0_0_14px_var(--color-glow)]"
+            >
+              {t('cta')}
+            </a>
+          )}
 
           {/* Organizers row */}
           <div className="mt-16 flex flex-col items-center gap-4">

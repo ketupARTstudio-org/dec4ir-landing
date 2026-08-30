@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { REGISTRATION_URL } from '@/data/contact'
+import { RESULTS_ANNOUNCED } from '@/data/results'
 import Image from 'next/image'
 import { withBasePath } from '@/lib/site'
 
-const NAV_LINKS = [
+const ALL_NAV_LINKS = [
+  { key: 'results',    href: '#results' },
   { key: 'about',      href: '#about' },
   { key: 'activities', href: '#activities' },
   { key: 'schedule',   href: '#schedule' },
@@ -18,7 +20,16 @@ const NAV_LINKS = [
   { key: 'contact',    href: '#contact' },
 ] as const
 
-const SECTION_IDS = ['hero', 'about', 'activities', 'schedule', 'categories', 'organizers', 'merch', 'faq', 'contact']
+const ALL_SECTION_IDS = ['hero', 'results', 'about', 'activities', 'schedule', 'categories', 'organizers', 'merch', 'faq', 'contact']
+
+// The Results section only mounts when RESULTS_ANNOUNCED is true — drop its nav
+// link and scrollspy target otherwise so nothing points at a missing anchor.
+const NAV_LINKS = RESULTS_ANNOUNCED
+  ? ALL_NAV_LINKS
+  : ALL_NAV_LINKS.filter(link => link.key !== 'results')
+const SECTION_IDS = RESULTS_ANNOUNCED
+  ? ALL_SECTION_IDS
+  : ALL_SECTION_IDS.filter(id => id !== 'results')
 
 export default function Navbar() {
   const t = useTranslations('nav')

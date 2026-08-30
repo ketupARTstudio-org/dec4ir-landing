@@ -8,9 +8,17 @@
     "merch": "Merch",
     "faq": "FAQ",
     "contact": "Contact",
+    "results": "Results",
     "register": "Register Now",
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
+  },
+  "results": {
+    "title": "Announcement",
+    "subtitle": "Drone Edu Challenge IR 4.0 (DEC4IR) 2026 Final Screening Finalists",
+    "blurb": "Congratulations to all students who have advanced to the Final Screening stage!",
+    "announcedOn": "Announced on",
+    "viewFullList": "View Full List on Canva"
   },
   "hero": {
     "edition": "7th Edition",
@@ -19,6 +27,7 @@
     "tagline1": "National Online Tournament",
     "tagline2": "Prestigious National Certificate",
     "cta": "Register Now",
+    "seeResults": "See Results",
     "eventPeriod": "May – August 2026",
     "organizersLabel": "Organized by",
     "scroll": "Scroll"

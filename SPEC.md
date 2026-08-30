@@ -54,14 +54,15 @@ Single scrollable landing page (`/`). Navigation anchors link to each section. N
 | # | Section | Anchor |
 |---|---|---|
 | 1 | Hero | `#hero` |
-| 2 | About DEC4IR | `#about` |
-| 3 | Tournament Activities | `#activities` |
-| 4 | Event Schedule | `#schedule` |
-| 5 | Categories & Certificates | `#categories` |
-| 6 | Organizers | `#organizers` |
-| 7 | Merchandise | `#merch` |
-| 8 | FAQ | `#faq` |
-| 9 | Contact / Footer | `#contact` |
+| 2 | Results Announcement *(conditional — see §5.3)* | `#results` |
+| 3 | About DEC4IR | `#about` |
+| 4 | Tournament Activities | `#activities` |
+| 5 | Event Schedule | `#schedule` |
+| 6 | Categories & Certificates | `#categories` |
+| 7 | Organizers | `#organizers` |
+| 8 | Merchandise | `#merch` |
+| 9 | FAQ | `#faq` |
+| 10 | Contact / Footer | `#contact` |
 
 ---
 
@@ -85,17 +86,45 @@ Single scrollable landing page (`/`). Navigation anchors link to each section. N
   - Wordmark: 7th Drone Edu Challenge IR 4.0 2026 (DEC4IR 2026)
   - Tagline (Science Technology, Engineering, and Mathematics (STEM) Education; National Online Tournament; Prestigious National Certificate) (bilingual via i18n)
   - Collaborators' logos row (bottom of hero)
-  - Primary CTA: "Register Now" → external registration URL (https://dec4ir.org)
+  - Primary CTA — state-dependent, driven by `RESULTS_ANNOUNCED` in `data/results.ts`:
+    - Results **not** announced (`false`): "Register Now" → external registration URL (https://dec4ir.org), `target="_blank"`
+    - Results announced (`true`): "See Results" → same-page anchor to `#results`, smooth-scroll via the global `scroll-behavior: smooth` (no JS handler)
+  - Button styling is identical in both states; only the label and link target change
 - **No countdown timer**
 
-### 5.3 About DEC4IR
+### 5.3 Results Announcement
+
+**Conditional section.** Rendered only when `RESULTS_ANNOUNCED` is `true` in `data/results.ts`. That same flag also switches the Hero CTA to "See Results" (§5.2) and is the trigger for the fireworks animation (§6.8.6). When `false`, the section is not rendered and the page reverts to its pre-results state.
+
+- **Placement:** immediately after Hero, before About (`#results` anchor).
+- **Purpose:** announce that results are out and send viewers to the full list hosted on Canva. No result data lives on this site.
+- **Config — `data/results.ts`:**
+  | Constant | Type | Purpose |
+  |---|---|---|
+  | `RESULTS_ANNOUNCED` | `boolean` | Master switch for the whole results state (this section + Hero CTA + fireworks) |
+  | `CANVA_RESULTS_URL` | `string` | External Canva link to the full finalist / results list |
+  | `RESULTS_DATE` | `string` (ISO 8601) | Announcement date, rendered locale-formatted (`ms-MY` / `en-MY`) |
+- **Background:** radial gradient, teal flavor — dark mid-blue (`#00203a`) fading to `--color-base` (consistent with §6.4).
+- **Content (centered, `max-w-3xl`, `z-10` above the fireworks canvas):**
+  - Eyebrow pill: `results.title` — "Announcement" / "Pengumuman"
+  - Heading: `results.subtitle` — the announcement title (e.g. "Saringan Akhir Finalis Drone Edu Challenge IR 4.0 (DEC4IR) 2026")
+  - Blurb: `results.blurb` — congratulatory line
+  - Date line: `results.announcedOn` + formatted `RESULTS_DATE`
+  - CTA button: `results.viewFullList` — "View Full List on Canva →" / "Lihat Senarai Penuh di Canva →" → `CANVA_RESULTS_URL`, `target="_blank"`, gradient-glow outline style (`border-accent` → hover `--color-glow`)
+- **i18n:** all strings under the `results` namespace in `messages/{en,bm}.json`; `nav.results` ("Results" / "Keputusan") supplies the navbar label.
+- **Navbar:** a "Results" link (`#results`) is added to the nav link set and the scrollspy watch list — but **only when `RESULTS_ANNOUNCED` is `true`** (both are filtered on the flag so nothing points at a missing anchor). See §6.8.5.
+- **Animations:** section entry fade/slide-in on scroll into view (`opacity 0→1`, `translateY(16px)→0`), consistent with §6.8.3; fireworks overlay per §6.8.6.
+
+---
+
+### 5.4 About DEC4IR
 - Mission statement: Drone Edu Challenge Industrial Revolution 4.0 (DEC4IR) is Malaysia’s premier online drone education competition, empowering secondary and primary school students with knowledge and hands-on experience in drone technology and programming.
 - Since its inception, DEC4IR has impacted over 100,000 students, fostering interest in STEM (Science, Technology, Engineering, and Mathematics) and Industry 4.0 technologies.
 - Some stats: 100000++ students benefitted, 1000++ schools participated, 6 years experience
 - Text + supporting illustration or icon set
 - Content fully bilingual via i18n
 
-### 5.4 Platform Features ("How It Works")
+### 5.5 Platform Features ("How It Works")
 Six feature cards showing what participants use to learn and compete:
 
 | Feature | Description | Image/Video | Link/Button |
@@ -111,7 +140,7 @@ Six feature cards showing what participants use to learn and compete:
 
 Layout: tab widget, 4:8 (tabs:content) on desktop, single column on mobile (tabs at top, bottom is content). Each content: image/GIF/video + title + 1-line description.
 
-### 5.5 Event Schedule / Timeline
+### 5.6 Event Schedule / Timeline
 Horizontal timeline on desktop, vertical on mobile.
 
 **Phases:**
@@ -132,7 +161,7 @@ Horizontal timeline on desktop, vertical on mobile.
 - **Screening Quiz:** Timed, scored quiz. Top performers per category advance.
 - **Final Assignment:** Project-based or extended task for shortlisted participants only.
 
-### 5.6 Categories & Certificates
+### 5.7 Categories & Certificates
 
 **Competition categories:**
 
@@ -153,7 +182,7 @@ Horizontal timeline on desktop, vertical on mobile.
 
 Layout: Category cards with badge/icon per level + certificate tier breakdown with MOE logo/seal.
 
-### 5.7 Organizers
+### 5.8 Organizers
 Logo grid.
 
 **Placeholder tier structure:**
@@ -162,13 +191,13 @@ Logo grid.
 
 Each logo: hover effect (slight glow/scale), clickable link to organizers' website. Placeholder grey boxes with tier label if logo not yet provided.
 
-### 5.8 Merchandise
+### 5.9 Merchandise
 - Section heading + short description
 - Grid of merch item cards (image + item name + short description)
 - Each card has a "Shop Now" button → external Shopee store (URL: https://shopee.com.my/DEC4IR-Stainless-Key-Ring-Keychain-i.1630383609.49051278865?extraParams=%7B%22display_model_id%22%3A360114462537%2C%22model_selection_logic%22%3A3%7D)
 - No cart, no payment on this site
 
-### 5.9 FAQ
+### 5.10 FAQ
 Accordion component. Each item: question (bold) → expands to answer on click.
 
 Content:
@@ -187,7 +216,7 @@ Content:
 
 BM translations of all FAQ content required.
 
-### 5.10 Contact / Footer
+### 5.11 Contact / Footer
 **Contact channels:**
 - Email: `mydrone@utm.my` (mailto: link)
 - Facebook: `https://www.facebook.com/droneeduchallenge`
@@ -247,6 +276,7 @@ The **Organizers** section retains its existing plain bordered card style — no
 | Section | Background |
 |---|---|
 | Hero | Carousel (video / image / gradient) — unchanged |
+| Results Announcement | Radial gradient (dark mid-blue `#00203a`, teal flavor) + canvas fireworks overlay (§6.8.6) |
 | About | Radial gradient (dark navy/teal) |
 | Tournament Activities | Radial gradient (dark purple/navy) |
 | Event Schedule | Solid `bg-base` |
@@ -289,7 +319,7 @@ The bottom of the Hero section fades seamlessly into the About section's radial 
 - Smooth CSS transitions (200–300ms ease)
 - Hero carousel cross-fade
 - FAQ accordion expand/collapse
-- **No parallax or particle effects**
+- **No parallax effects.** Particle effects are limited to the single case in §6.8.6 (Results fireworks); no others.
 - Scroll-triggered animations are permitted only for the specific cases listed below; all others remain off.
 
 #### 6.8.1 Hero — Drone wireframe fade-in
@@ -314,12 +344,23 @@ The bottom of the Hero section fades seamlessly into the About section's radial 
 - **Slow rotation:** continuous CSS `@keyframes` rotation — full 360° over ~30 s linear, infinite. Starts after the fade-in completes.
 
 #### 6.8.5 Navbar — Scrollspy
-- An `IntersectionObserver` watches each section element (`#hero`, `#about`, `#activities`, …, `#contact`).
+- An `IntersectionObserver` watches each section element (`#hero`, `#results`, `#about`, `#activities`, …, `#contact`). The `#results` entry — and its matching navbar link — are included only when `RESULTS_ANNOUNCED` is `true` (the section is not rendered otherwise).
 - The section whose top edge is nearest the top of the viewport (or the one with the most visible area) is considered "active."
 - Active nav link: `text-glow` color + subtle text-shadow glow (`0 0 8px var(--color-glow)` at ~60% opacity).
 - Inactive nav links: default `text-secondary` (unchanged from current).
 - Applies to both desktop nav links and mobile menu links.
-- No active state on the "Register Now" CTA button.
+- No active state on the Hero CTA button (in either the "Register Now" or "See Results" state).
+
+#### 6.8.6 Results Announcement — Fireworks
+- A full-bleed `<canvas>` overlay sits behind the section content (`absolute inset-0`, `pointer-events-none`, `aria-hidden`) and renders a lightweight particle firework effect.
+- Palette: theme colors only — `#e69125` (gold), `#00d4ff` (cyan), `#f8f2dc` (warm white), with occasional pure-white sparks. Additive blending (`globalCompositeOperation = 'lighter'`) over the dark section background.
+- **Trigger:** starts when the `#results` section first enters the viewport (`IntersectionObserver`, fires once to begin).
+- **Loop:** after starting, volleys fire continuously at randomised intervals (~1.5–2.7 s apart, with an occasional simultaneous double burst). The `requestAnimationFrame` loop pauses automatically while the browser tab is backgrounded.
+- Particle motion: gentle gravity + drag, ~1.8–3 s lifespan per spark, radius and alpha fading out by life.
+- Canvas is DPR-aware and re-sizes on `resize`; the RAF loop and listeners are torn down on unmount.
+- **Reduced motion:** when `prefers-reduced-motion: reduce` is set, the effect is skipped entirely — no canvas animation runs.
+- Renders only when `RESULTS_ANNOUNCED` is `true` (the whole section is gated on it).
+- This is the one sanctioned exception to the "no particle effects" rule in §6.8.
 
 ### 6.9 Responsive Breakpoints
 Mobile-first. Tailwind defaults: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px.
@@ -417,6 +458,7 @@ services:
 │   │   └── Footer.tsx
 │   ├── sections/
 │   │   ├── Hero.tsx
+│   │   ├── Results.tsx      # Results announcement + fireworks (conditional on RESULTS_ANNOUNCED)
 │   │   ├── About.tsx
 │   │   ├── PlatformFeatures.tsx
 │   │   ├── EventSchedule.tsx
@@ -435,6 +477,7 @@ services:
 │
 ├── data/
 │   ├── schedule.ts          # Event phase dates and descriptions
+│   ├── results.ts           # RESULTS_ANNOUNCED toggle, Canva results URL, announcement date
 │   ├── categories.ts        # Competition categories and certificate tiers
 │   ├── sponsors.ts          # Sponsor tiers and logo data
 │   ├── merchandise.ts       # Merch items and Shopify links
@@ -467,7 +510,7 @@ services:
 ## 10. Registration Flow
 
 - Registration happens on an **external platform** (https://dec4ir.org/portal)
-- This site provides: CTA buttons (Navbar, Hero, Categories section) that `target="_blank"` link to the external URL
+- This site provides `target="_blank"` CTA buttons to the external URL: Navbar (always) and Categories section (always). The Hero CTA links there **only while `RESULTS_ANNOUNCED` is `false`**; once results are out it becomes "See Results" and scrolls to `#results` (§5.2, §5.3)
 - No form, no data collection, no backend on this site
 - Registration URL stored in a single config constant for easy update
 
@@ -475,7 +518,7 @@ services:
 
 ## 11. Out of Scope
 
-- Results page (external link only — this site will link to it when ready)
+- On-site results/leaderboard listing — the full list is hosted externally on Canva; the Results Announcement section (§5.3) only links out to it
 - Prize/cash award section (deferred)
 - Payment processing (Shopify handles merch)
 - User accounts or authentication
@@ -483,4 +526,4 @@ services:
 - Analytics or tracking scripts
 - Admin panel or CMS
 - Countdown timer
-- Scroll-triggered animations or parallax
+- Parallax; scroll-triggered animation or particle effects beyond the specific cases enumerated in §6.8

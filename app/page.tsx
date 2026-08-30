@@ -1,5 +1,6 @@
 import ScrollToTop from '@/components/ui/ScrollToTop'
 import Hero from '@/components/sections/Hero'
+import Results from '@/components/sections/Results'
 import About from '@/components/sections/About'
 import TournamentActivities from '@/components/sections/TournamentActivities'
 import EventSchedule from '@/components/sections/EventSchedule'
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Results />
       <About />
       <TournamentActivities />
       <EventSchedule />

@@ -8,9 +8,17 @@
     "merch": "Cenderamata",
     "faq": "Soal Jawab",
     "contact": "Hubungi",
+    "results": "Keputusan",
     "register": "Daftar Sekarang",
     "menuOpen": "Buka menu",
     "menuClose": "Tutup menu"
+  },
+  "results": {
+    "title": "Pengumuman",
+    "subtitle": "SARINGAN AKHIR FINALIS DRONE EDU CHALLENGE IR 4.0 (DEC4IR) 2026",
+    "blurb": "Tahniah diucapkan kepada semua murid yang berjaya melangkah ke peringkat Saringan Akhir!",
+    "announcedOn": "Diumumkan pada",
+    "viewFullList": "Lihat Senarai Penuh di Canva"
   },
   "hero": {
     "edition": "Edisi ke-7",
@@ -19,6 +27,7 @@
     "tagline1": "Pertandingan Dalam Talian Kebangsaan",
     "tagline2": "Sijil Kebangsaan Berprestij",
     "cta": "Daftar Sekarang",
+    "seeResults": "Lihat Keputusan",
     "eventPeriod": "Mei – Ogos 2026",
     "organizersLabel": "Dianjurkan oleh",
     "scroll": "Menatal"
